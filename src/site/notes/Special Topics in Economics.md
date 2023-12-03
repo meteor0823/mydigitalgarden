@@ -16,8 +16,10 @@ D:\All Document\Msc\Some Specific Topics in Economics
 ```
 
 The course grade is based on class participation (10%), a group presentation (20%), a group project (20%), and a final exam (50%).
+{ #Grade}
 
-[[Special Topics in Economics#An Overview of China’s Financial System\|双链测试]]
+
+[[Special Topics in Economics#^Grade\|Grade]]
 # Introduction: Why Does Finance Matter? 
 In an environment with no information or transaction costs, there is no need for a financial (Kenneth Arrow (1964)-Gerard Debreu (1959)) institution.
 
