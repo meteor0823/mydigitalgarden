@@ -81,7 +81,6 @@ $$\begin{align}\mathbb{E}(Z)&=\mathbb{E}(Z|X=0)\mathbb{P}(X=0)+\mathbb{E}(Z|X=1)
 \mathbb{E}(Z)&=\mathbb{E}(Z|X=0)\mathbb{P}(X=0)+\mathbb{E}(Z|X=1)\mathbb{P}(X=1)
 \end{align}$$
 ### Law of Iterated Expectation
-{ #898cd0}
 
 
 The right hand side is in fact the probability weighting of CE, thus equal to $\mathbb{E}(\mathbb{E}(Z|X))$; this the **Law of iterated expectation**:
@@ -149,10 +148,10 @@ $$\mathbb{E}((y-p(x))^2)\leq \mathbb{E}((y-g(x))^2)$$
 That is, $p(x)$ solves the minimization problem
 $$\mathop{min}\limits_g\ \mathbb{E}((y-g(x))^2)$$
 	Proof:
-	$$\begin{align}
+$$\begin{align}
 (Y_i-g(X_i))^2=&\big((Y_i-E[Y_i|X_i])+(E[Y_i|X_i]-g(X_i))\big)^2\\
-	=&(Y_i-E[Y_i|X_i])^2+2(E[Y_i|X_i]-g(X_i))(Y_i-E[Y_i|X_i])\\
-	&+(E[Y_i|X_i]-g(X_i))^2
+=&(Y_i-E[Y_i|X_i])^2+2(E[Y_i|X_i]-g(X_i))(Y_i-E[Y_i|X_i])\\
+&+(E[Y_i|X_i]-g(X_i))^2
 \end{align}$$
 	The first term doesn't matter because it doesn't involve $g(X_i)$. The second term can be written $h(X_i)\varepsilon$, where $h(X_i)\equiv 2(E[Y_i|X_i]-g(X_i))$, and therefore has expectation zero by the CEF-decomposition property($\mathbb{E}(\varepsilon g(\mathbf{x}))=0$). The last term is minimized at zero when $g(X_i)$ is CEF
 
@@ -371,14 +370,14 @@ Let $\delta_{x_i}:=\mathbb{E}(Y_i|x_i,D_i=1)-\mathbb{E}(Y_i|x_i,D_i=0)$ be the d
 
 Exercise
 show that $\delta_{tot}=\mathbb{E}(\delta_{x_i}|D_i=1)$ under CIA
-	Solution:
-	$\delta_{tot}=\mathbb{E}(Y_{1i}-Y_{0i}|D_i=1)$
-	$\delta_{x_i}:=\mathbb{E}(Y_i|x_i,D_i=1)-\mathbb{E}(Y_i|x_i,D_i=0)$
-	According to CIA,
-	$\mathbb{E}(Y_i|x_i,D_i=0)=\mathbb{E}(Y_i|x_i,D_i=1)$
-	Therefore, $\delta_{x_i}:=\mathbb{E}(Y_i|x_i,D_i=1)-\mathbb{E}(Y_i|x_i,D_i=1)=\mathbb{E}(Y_{1i}-Y_{0i}|x_i,D_i=1)$
-	According to [[Econometrics#Law of Iterated Expectation\|#Law of Iterated Expectation]]
-	$\delta_{tot}=\mathbb{E}\Big(\mathbb{E}(Y_{1i}-Y_{0i}|x_i,D_i=1)|D_i=1\Big)=\mathbb{E}(\delta_{x_i}|D_i=1)$
+- Solution:
+- $\delta_{tot}=\mathbb{E}(Y_{1i}-Y_{0i}|D_i=1)$
+- $\delta_{x_i}:=\mathbb{E}(Y_i|x_i,D_i=1)-\mathbb{E}(Y_i|x_i,D_i=0)$
+- According to CIA,
+- $\mathbb{E}(Y_i|x_i,D_i=0)=\mathbb{E}(Y_i|x_i,D_i=1)$
+- Therefore, $\delta_{x_i}:=\mathbb{E}(Y_i|x_i,D_i=1)-\mathbb{E}(Y_i|x_i,D_i=1)=\mathbb{E}(Y_{1i}-Y_{0i}|x_i,D_i=1)$
+- According to [[Econometrics#Law of Iterated Expectation\|#Law of Iterated Expectation]]
+- $\delta_{tot}=\mathbb{E}\Big(\mathbb{E}(Y_{1i}-Y_{0i}|x_i,D_i=1)|D_i=1\Big)=\mathbb{E}(\delta_{x_i}|D_i=1)$
 
 #### The Omitted Variables Bias Formula
 Now consider the previous regression model but with $x_i$ being a scale variable $x_i : Y_i=\alpha+\rho s_i+\beta x_i+\varepsilon_i$
@@ -426,17 +425,17 @@ Therefore, we have
 $$\delta_R=\frac{\mathbb{E}\Big(Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)\Big)}{\mathbb{E}\Big(\big(D_i-\mathbb{E}(D_i|x_i)\big)^2\Big)}$$
 Exercise
 show that $\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)]=\mathbb{E}\big[\big(D_i-\mathbf{E}(D_i|x_i)\big)\mathbb{E}(Y_i|D_i,x_i)\big]$
-	Solution:
-	According to [[Econometrics#Law of Iterated Expectation\|#Law of Iterated Expectation]]
-	$\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)]=\mathbb{E}\Big[\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)|D_i,x_i]\Big]$
-	$D_i-E(D_i|x_i)$ is a function of $D_i,x_i$
-	According to [[Econometrics#An important property\|#An important property]], $D_i-E(D_i|x_i)$  can be taken out of the brackets
-	$\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)]=\mathbb{E}\big[\big(D_i-\mathbf{E}(D_i|x_i)\big)\mathbb{E}(Y_i|D_i,x_i)\big]$
+- Solution:
+- According to [[Econometrics#Law of Iterated Expectation\|#Law of Iterated Expectation]]
+- $\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)]=\mathbb{E}\Big[\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)|D_i,x_i]\Big]$
+- $D_i-E(D_i|x_i)$ is a function of $D_i,x_i$
+- According to [[Econometrics#An important property\|#An important property]], $D_i-E(D_i|x_i)$  can be taken out of the brackets
+- $\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)]=\mathbb{E}\big[\big(D_i-\mathbf{E}(D_i|x_i)\big)\mathbb{E}(Y_i|D_i,x_i)\big]$
 
 Exercise==还没看懂==
 $\mathbb{E}(Y_i|D_i,x_i)=\mathbb{E}(Y_i|D_i=0,x_i)+\delta_{x_i}D_i$
 	Solution:
-	$=E(Y_i|D_i=0,x_2)+D_i\Big(E(Y_i|x_i,D_i=1)-E(Y_i|x_i,D_i=0)\Big)$
+	$=E(Y_i|D_i=0,x_i)+D_i\Big(E(Y_i|x_i,D_i=1)-E(Y_i|x_i,D_i=0)\Big)$
 	这么拆分的情况下
 	When $D_i=0$
 	$=E(Y_i|x_i,D_i=0)$
