@@ -19,7 +19,7 @@ The course grade is based on class participation (10%), a group presentation (20
 { #Grade}
 
 
-[[Special Topics in Economics#^Grade\|Grade]]
+
 # Introduction: Why Does Finance Matter? 
 In an environment with no information or transaction costs, there is no need for a financial (Kenneth Arrow (1964)-Gerard Debreu (1959)) institution.
 
@@ -53,6 +53,8 @@ The Dark Side of Finance
 2. Without proper rules, finance can easily degenerate into a rent-seeking activity (Zingales’ 2015 AFA Presidential Address).
 3. Many financial activities tend to have a private return that is much higher than the (perceived) social return.
 4. Too much finance without proper regulations often lead to financial crises, and financial crises are very costly (e.g., Schularick and Taylor, 2012)
+
+[[Special Topics in Economics#^Grade\|Grade]]
 
 Evidence
 Supportive Evidence on Finance and Economic Growth:
