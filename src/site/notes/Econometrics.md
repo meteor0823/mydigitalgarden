@@ -376,7 +376,7 @@ show that $\delta_{tot}=\mathbb{E}(\delta_{x_i}|D_i=1)$ under CIA
 - According to CIA,
 - $\mathbb{E}(Y_i|x_i,D_i=0)=\mathbb{E}(Y_i|x_i,D_i=1)$
 - Therefore, $\delta_{x_i}:=\mathbb{E}(Y_i|x_i,D_i=1)-\mathbb{E}(Y_i|x_i,D_i=1)=\mathbb{E}(Y_{1i}-Y_{0i}|x_i,D_i=1)$
-- According to [[Econometrics#Law of Iterated Expectation\|#Law of Iterated Expectation]]
+- According to [[Econometrics#Law of Iterated Expectation\|Law of Iterated Expectation]]
 - $\delta_{tot}=\mathbb{E}\Big(\mathbb{E}(Y_{1i}-Y_{0i}|x_i,D_i=1)|D_i=1\Big)=\mathbb{E}(\delta_{x_i}|D_i=1)$
 
 #### The Omitted Variables Bias Formula
@@ -426,10 +426,10 @@ $$\delta_R=\frac{\mathbb{E}\Big(Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)\Big)}{\math
 Exercise
 show that $\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)]=\mathbb{E}\big[\big(D_i-\mathbf{E}(D_i|x_i)\big)\mathbb{E}(Y_i|D_i,x_i)\big]$
 - Solution:
-- According to [[Econometrics#Law of Iterated Expectation\|#Law of Iterated Expectation]]
+- According to [[Econometrics#Law of Iterated Expectation\|Law of Iterated Expectation]]
 - $\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)]=\mathbb{E}\Big[\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)|D_i,x_i]\Big]$
 - $D_i-E(D_i|x_i)$ is a function of $D_i,x_i$
-- According to [[Econometrics#An important property\|#An important property]], $D_i-E(D_i|x_i)$  can be taken out of the brackets
+- According to [[Econometrics#An important property\|An important property]], $D_i-E(D_i|x_i)$  can be taken out of the brackets
 - $\mathbb{E}[Y_i\big(D_i-\mathbb{E}(D_i|x_i)\big)]=\mathbb{E}\big[\big(D_i-\mathbf{E}(D_i|x_i)\big)\mathbb{E}(Y_i|D_i,x_i)\big]$
 
 Exercise==还没看懂==
