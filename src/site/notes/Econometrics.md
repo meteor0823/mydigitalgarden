@@ -449,7 +449,7 @@ $\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)\mathbb{E}(Y_i|D_i,x_i)\Big]=\m
 	$=\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)\mathbb{E}(Y_i|D_i=0,x_i)\Big]+\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)\delta_{x_i}D_i\Big]$
 	Therefore, what we need to do is
 	Prove $\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)\mathbb{E}(Y_i|D_i=0,x_i)\Big]=0$
-	According to [[Econometrics#Law of Iterated Expectation\|#Law of Iterated Expectation]]
+	According to [[Econometrics#Law of Iterated Expectation\|Law of Iterated Expectation]]
 	$\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)\mathbb{E}(Y_i|D_i=0,x_i)\Big]=E\Bigg[\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)\mathbb{E}(Y_i|D_i=0,x_i)|x_i\Big]\Bigg]$
 	$\because \mathbb{E}(Y_i|D_i=0,x_i)$ is a function of $x_i$ i.e. $f(x_i)$
 	According to 
@@ -467,7 +467,7 @@ $E[E[xy|x]]=E[xE[y|x]]$ can be [proved](https://stats.stackexchange.com/question
 	In this equation,
 	$\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)|x_i\Big]=0$ because
 	$\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)|x_i\Big]=\mathbb{E}(D_i|x_i)-\mathbb{E}\Big[\mathbb{E}(D_i|x_i)|x_i\Big]$
-	According to [[Econometrics#Law of Iterated Expectation\|#Law of Iterated Expectation]]
+	According to [[Econometrics#Law of Iterated Expectation\|Law of Iterated Expectation]]
 	$\mathbb{E}\Big[\mathbb{E}(D_i|x_i)|x_i\Big]=\mathbb{E}(D_i|x_i)$
 $\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)D_i\delta_{x_i}\Big]=\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)^2\delta_{x_i}\Big]$
 	Solution:
@@ -477,7 +477,7 @@ $\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)D_i\delta_{x_i}\Big]=\mathbb{E}
 	$\therefore \mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)D_i\delta_{x_i}\Big]-\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)^2\delta_{x_i}\Big]=\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)D_i\delta_{x_i}-\big(D_i-\mathbb{E}(D_i|x_i)\big)^2\delta_{x_i}\Big]$
 	$=\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)[D_i\delta_{x_i}-\big(D_i-\mathbb{E}(D_i|x_i)\big)\delta_{x_i}]\Big]$
 	$=\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)\mathbb{E}(D_i|x_i)\delta_{x_i}\Big]$
-	According to [[Econometrics#Law of Iterated Expectation\|#Law of Iterated Expectation]]
+	According to [[Econometrics#Law of Iterated Expectation\|Law of Iterated Expectation]]
 	$=\mathbb{E}\Bigg[\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)\mathbb{E}(D_i|x_i)\delta_{x_i}|x_i\Big]\Bigg]$
 	$=\mathbb{E}\Bigg[\mathbb{E}(D_i|x_i)\delta_{x_i}\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)|x_i\Big]\Bigg]$
 	Same as the precious exercise $\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)|x_i\Big]=0$ 
@@ -1424,12 +1424,12 @@ qui xtreg lny lnx1 lnx2 lnx4 lnx20 lnx25,re //随机效应估计
 est store RE //储存结果
 hausman FE RE 
 ```
-![[Pasted image 20231113151957.png\|Pasted image 20231113151957.png]]
+![Pasted image 20231113151957.png](/img/user/attachments/Pasted%20image%2020231113151957.png)
 其结果如上表：由于p值为0.0000，故强烈拒绝原假设，应使用固定效应模型，而不是随机效应模型。但是很多时候计算出的统计量可能为负，这时候使用sigmamore或者stigmaless选项可以大大减少出现负值的可能性。
 ```Stata
 hausman FE RE,constant sigmamore
 ```
-![[Pasted image 20231113152041.png\|Pasted image 20231113152041.png]]
+![v2-a78ac127eee5eacfdefe8dff2e03539d_r.jpg (783×440) (zhimg.com)](https://pic2.zhimg.com/v2-a78ac127eee5eacfdefe8dff2e03539d_r.jpg)
 由结果可知加入sigmamore选项的结果与未加入选项的结果是一致的，故强烈拒绝原假设，应使用固定效应模型，而不是随机效应模型。
 
 但是，如果聚类稳健标准误与普通标准误相差较大时，或者说数据存在异方差与自相关时，则传统的豪斯曼检验不适用，此时可以通过xtoverid命令使用稳健的豪斯曼检验，其stata命令如下：
@@ -1441,7 +1441,7 @@ ssc install ranktest //安装相关命令
 quietly xtreg lny lnx1 lnx2 lnx4 lnx20 lnx5,re r 
 xtoverid
 ```
-![[Pasted image 20231113152119.png\|Pasted image 20231113152119.png]]
+![v2-b1a7f8c480db3bffb3323573c1aa4f4c_720w.webp (720×421) (zhimg.com)](https://pic1.zhimg.com/80/v2-b1a7f8c480db3bffb3323573c1aa4f4c_720w.webp)
 稳健的hausman检验结果
 由图3结果可知，稳健的hausman检验p值为0.0000，故强烈拒绝原假设，使用固定效应模型。
 
@@ -1461,8 +1461,8 @@ qui xsmle lny lnx1 lnx2 lnx4 lnx20 lnx23 lnx26,wmat(w0) model(sdm) re type(ind) 
 est store sdm_re
 hausman sdm_fe sdm_re
 ```
-![[Pasted image 20231113152205.png\|Pasted image 20231113152205.png]]
+![v2-98dbc80bdc769d1aba4de8f1c58e2ca4_720w.webp (720×450) (zhimg.com)](https://pic1.zhimg.com/80/v2-98dbc80bdc769d1aba4de8f1c58e2ca4_720w.webp)
 如果按照方法二出现负值，而其结果较大，网上的一些意见是拒绝随机效应模型的原假定，使用固定效应模型，也可以更换变量或模型形式。或者通过方法一进行计算，但是这个命令有点奇怪，用同样的变量，p值有时候能出来有时候出不来，建议不经意间多运行几次，实在不行就随缘吧！
-![[Pasted image 20231113152223.png\|Pasted image 20231113152223.png]]
-![[Pasted image 20231113152232.png\|Pasted image 20231113152232.png]]
+![v2-685ba53b1fdded112be8fbb9a07f79d0_r.jpg (791×657) (zhimg.com)](https://pic1.zhimg.com/v2-685ba53b1fdded112be8fbb9a07f79d0_r.jpg)
+![v2-63317342d7b438a3501c2e03216b2f9d_720w.webp (720×597) (zhimg.com)](https://pic2.zhimg.com/80/v2-63317342d7b438a3501c2e03216b2f9d_720w.webp)
 在我经历了无数次尝试之后终于把方法一的结果导出来了，是不是很奇怪？
