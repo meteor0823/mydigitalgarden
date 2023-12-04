@@ -486,7 +486,7 @@ Now we have
 $$\delta_R=\frac{\mathbb{E}\Big[\big(D_i-\mathbb{E}(D_i|x_i)\big)^2\delta_{x_i}\Big]}{\mathbb{E}\Big(\big(D_i-\mathbb{E}(D_i|x_i)\big)^2\Big)}$$
 Let $\sigma^2_D(x_i)=\mathbf{E}\Big((D_i-\mathbb{E}(D_i|x_i))^2|x_i\Big)$, the conditional variance of $D_i$ given $x_i$ , hence a function of $x_i$
 
-Exerciese==没看懂求解答==
+Exerciese==没看懂求解答== 看上一题 ，把$\sigma^2_D(x_i)=\mathbf{E}\Big((D_i-\mathbb{E}(D_i|x_i))^2|x_i\Big)$带进去就行
 Show that
 $$\delta_R=\frac{\mathbb{E}\big(\sigma^2_D(x_i)\delta_{x_i}\big)}{\mathbb{E}\big(\sigma^2_D(x_i)\big)}$$
 
@@ -497,18 +497,18 @@ D is a binary variable with $\mathbb{P}(D=1)=p\in(0,1)$. Show that $\mathbf{Var}
 	The variance of a random variable $X$ is defined as:
 	$$\mathbf{Var}(X) = E[(X - E(X))^2]$$
 	In this case, $D$ is a binary variable that takes the value 1 with probability $p$ and the value 0 with probability $1-p$. The expected value of $D$ can be calculated as:
-	$$E(D) = p \cdot 1 + (1-p) \cdot 0 = p$$
+$$E(D) = p \cdot 1 + (1-p) \cdot 0 = p$$
 	Now, let's calculate the variance of $D$:
-	$$\mathbf{Var}(D) = E[(D - E(D))^2]$$
+$$\mathbf{Var}(D) = E[(D - E(D))^2]$$
 	Substituting the value of $E(D)$, we get:
-	$$\mathbf{Var}(D) = E[(D - p)^2]$$
+$$\mathbf{Var}(D) = E[(D - p)^2]$$
 	Since $D$ can only take the values 0 and 1, we can write:
-	$$\mathbf{Var}(D) = (0 - p)^2 \cdot \mathbb{P}(D=0) + (1 - p)^2 \cdot \mathbb{P}(D=1)$$
+$$\mathbf{Var}(D) = (0 - p)^2 \cdot \mathbb{P}(D=0) + (1 - p)^2 \cdot \mathbb{P}(D=1)$$
 	Since $\mathbb{P}(D=0) = 1 - \mathbb{P}(D=1)$, we can rewrite this as:
-	$$\mathbf{Var}(D) = p^2 \cdot (1 - p) + (1 - p)^2 \cdot p$$
+$$\mathbf{Var}(D) = p^2 \cdot (1 - p) + (1 - p)^2 \cdot p$$
 	Simplifying this expression, we get:
-	$$\mathbf{Var}(D) = p(1-p)(p + 1 - p)$$
-	$$\mathbf{Var}(D) = (1-p)p$$
+$$\mathbf{Var}(D) = p(1-p)(p + 1 - p)$$
+$$\mathbf{Var}(D) = (1-p)p$$
 	Therefore, we have shown that $\mathbf{Var}(D) = (1-p)p$.
 
 Exercise==还没看懂==
@@ -518,11 +518,26 @@ Hint: You may apply the Bayes’ rule:
 $$\mathbb{P}(x_i=s|D_i=1)=\frac{\mathbb{P}(D_i=1|x_i=s)\cdot\mathbb{P}(s_i=s)}{\mathbb{P}(D_i=1)}$$
 	Solution:
 	Let $δ_{tot}$ be the treatment effect on treated:
-	$$\delta_{tot}=\mathbb{E}(Y_{1i}-Y_{0i}|D_i=1)$$
+$$\delta_{tot}=\mathbb{E}(Y_{1i}-Y_{0i}|D_i=1)$$
 	treatment on all applicants:
-	$$\delta_{ate}=\mathbb{E}(Y_{1i}-Y_{oi})=\sum\limits_s \delta_s \mathbb{E}(x_i=s)$$
-	![Pasted image 20231108173602](https://raw.githubusercontent.com/meteor0823/BlogImage/main/202312031710539.png)
-
+$$\delta_{ate}=\mathbb{E}(Y_{1i}-Y_{oi})=\sum\limits_s \delta_s \mathbb{E}(x_i=s)$$
+	==上面为什么要引用treatment on all applicants属实没看懂== 可能是为了引出$\delta_s$ ?
+	TA's method:
+	$\delta_{tot}=\mathbb{E}(Y_{1i}-Y_{0i}|D_i=1)$
+	According to [Definition of Conditional expectation](https://en.wikipedia.org/wiki/Conditional_expectation#:~:text=In%20probability%20theory%2C%20the%20conditional%20expectation%2C%20conditional%20expected,certain%20set%20of%20%22conditions%22%20is%20known%20to%20occur.)
+	In Discrete random variables
+	$E(X|Y=y)=\sum\limits_x xP(X=x|Y=y)=\sum\limits_x x\frac{P(X=x,Y=y)}{P(Y=y)}$
+	In addition, accrding to sildes-4, the definition of $\delta_s$
+	Note that in $\mathbb{E}(\delta_{x_i}|D_i=1)$, the (conditional) expectation averages out $x_i$
+	Suppose $x_i$ takes discrete values, e.g., years of education $\{0,1,\dots,16\}$, we can figure out the condiional probabilities: $\mathbb{P}(x_i=s|D_i=1),s\in\{0,1,\dots,16\}$
+	In this case, $\mathbb{E}(\delta_{x_i}|D_i=1)=\sum\limits_s \delta_s\mathbb{P}(x_i=s|D_i=1)$
+	Therefore, 
+	$\delta_{tot}=\sum_s \delta_s P(x_i=s|D_i=1)$
+	According to Bayers' rule
+	$\delta_{tot}=\sum_s \delta_s \frac{P(D_i|x_i=s)P(x_i=s)}{P(D_i=1)}$
+	According to [Law of total probability](https://en.wikipedia.org/wiki/Law_of_total_probability), $P(A)=\sum\limits_n P(A\cap B_n)$ or alternatively, $P(A)=\sum\limits_n P(A|B_n)P(B_n)$
+	$P(D_i=1)=\sum_s P(D_i=1|x_i=s)P(x_i=s)$
+	Therefore, $\mathbb{E}[Y_{1i}-Y_{0i}|D_i=1]=\frac{\sum_s \delta_s \mathbb{P}(D_i=1|x_i=s)\mathbb{P}(x_i=s)}{\sum_s  \mathbb{P}(D_i=1|x_i=s)\mathbb{P}(x_i=s)}$
 
 
 ## ECON 5122 Exercise Set 1
@@ -624,23 +639,23 @@ $$Y_i=\beta_0+\beta_1X_i+u_i,\quad i=1,2,\dots,n$$
 $$\hat{\beta}_0+\hat{\beta}_1\bar{X}=\bar{Y},\quad \hat{\beta}_1=\frac{\sum^n_{i=1}(X_i-\bar{X})(Y_i-\bar{Y})}{\sum^n_{i=1}(X_i-\bar{X})^2}$$
 where $\bar{X}=\frac{1}{n}\sum^n_{i=1}X_i,\bar{Y}=\frac{1}{n}\sum^n_{i=1}Y_i$
 	$\hat{\beta}_0,\hat{\beta}_1$ can be obtained by solving the following least squares problem
-	$$\min_{b_0,b_1}\sum\limits^n_{i=1}(Y_i-(b_0+b_1X_i))^2$$
+$$\min_{b_0,b_1}\sum\limits^n_{i=1}(Y_i-(b_0+b_1X_i))^2$$
 	First order conditions lead to
-	$$\sum\limits^n_{i=1}(Y_i-\hat{\beta}_0-\hat{\beta}_1X_i)=0\tag{4}$$
-	$$\sum\limits^n_{i=1}X_i(Y_i-\hat{\beta}_0-\hat{\beta}_1X_i)=0\tag{5}$$
+$$\sum\limits^n_{i=1}(Y_i-\hat{\beta}_0-\hat{\beta}_1X_i)=0\tag{4}$$
+$$\sum\limits^n_{i=1}X_i(Y_i-\hat{\beta}_0-\hat{\beta}_1X_i)=0\tag{5}$$
 	Rearrange terms and divide both sides by $n$, we have $\hat{\beta}_0+\hat{\beta}_1\bar{X}=\bar{Y}$. Next, substitute $\hat{β}_0$ into (5), we have
-	$$\sum\limits^n_{i=1}X_i(Y_i-\bar{Y}-\hat{\beta}_1(X_i-\bar{X}))=0\Leftrightarrow \sum\limits^n_{i=1}(X_i-\bar{X})(Y_i-\bar{Y}-\hat{\beta}_1(X_i-\bar{X}))=0$$
+$$\sum\limits^n_{i=1}X_i(Y_i-\bar{Y}-\hat{\beta}_1(X_i-\bar{X}))=0\Leftrightarrow \sum\limits^n_{i=1}(X_i-\bar{X})(Y_i-\bar{Y}-\hat{\beta}_1(X_i-\bar{X}))=0$$
 	Next, rearrange terms, we have $\hat{\beta}_1=\frac{\sum^n_{i=1}(X_i-\overline{X})(Y_i-\overline{Y})}{\sum^n_{i=1}(X_i-\overline{X})^2}$
 
 (iii) (10 pts) Recall that the $R^2$ in the regression of $Y$ on $X$ is given by
 $$R^2=\frac{\sum^n_{i=1}(\hat{Y}_i-\overline{Y})^2}{\sum^n_{i=1}(Y_i-\overline{Y})^2}$$
 where $\hat{Y}_i=\hat{\beta}_0+\hat{\beta}_1 X_i$ is the fitted value. Show that the regression $R^2$ in the regression of $Y$ on $X$ is the squared value of the sample correlation between X and Y . That is, show that $R^2=r^2_{XY}$. (Recall that $r_{XY}=\frac{s_{XY}}{s_X s_Y}$, where $s_{XY}=\frac{1}{n-1}\sum^n_{i=1}(X_i-\overline{X})(Y_i-\overline{Y}),s^2_X=\frac{1}{n-1}\sum^n_{i=1}(X_i-\overline{X})^2,s^2_Y=\frac{1}{n-1}\sum^n_{i=1}(Y_i-\overline{Y})^2$).
 	Since $\hat{\beta}_0+\hat{\beta}_1\overline{X}=\overline{Y}$
-	$$\hat{Y}_i-\overline{Y}=\hat{\beta}_1(X_i-\overline{X})$$
+$$\hat{Y}_i-\overline{Y}=\hat{\beta}_1(X_i-\overline{X})$$
 	Thus,
-	$$R^2=\hat{\beta}^2_1\frac{\sum^n_{i=1}(X_i-\overline{X})^2}{\sum^n_{i=1}(Y_i-\overline{Y})^2}$$
+$$R^2=\hat{\beta}^2_1\frac{\sum^n_{i=1}(X_i-\overline{X})^2}{\sum^n_{i=1}(Y_i-\overline{Y})^2}$$
 	Since $\hat{\beta}_1=\frac{\sum^n_{i=1}(X_i-\bar{X})(Y_i-\bar{Y})}{\sum^n_{i=1}(X_i-\bar{X})^2}$ we have
-	$$R^2=\frac{\Big(\sum^n_{i=1}(X_i-\bar{X})(Y_i-\bar{Y})\Big)^2}{\Big(\sum^n_{i=1}(X_i-\bar{X})^2\Big)^2} \frac{\sum^n_{i=1}(X_i-\overline{X})^2}{\sum^n_{i=1}(Y_i-\overline{Y})^2}=\frac{\Big(\sum^n_{i=1}(X_i-\overline{X})(Y_i-\overline{Y})\Big)^2}{\sum^n_{i=1}(X_i-\overline{X})^2\sum^n_{i=1}(Y_i-\overline{Y})^2}$$
+$$R^2=\frac{\Big(\sum^n_{i=1}(X_i-\bar{X})(Y_i-\bar{Y})\Big)^2}{\Big(\sum^n_{i=1}(X_i-\bar{X})^2\Big)^2} \frac{\sum^n_{i=1}(X_i-\overline{X})^2}{\sum^n_{i=1}(Y_i-\overline{Y})^2}=\frac{\Big(\sum^n_{i=1}(X_i-\overline{X})(Y_i-\overline{Y})\Big)^2}{\sum^n_{i=1}(X_i-\overline{X})^2\sum^n_{i=1}(Y_i-\overline{Y})^2}$$
 	Rearrange terms, we have $R^2=r^2_{XY}$
 
 
@@ -649,11 +664,11 @@ where $\hat{Y}_i=\hat{\beta}_0+\hat{\beta}_1 X_i$ is the fitted value. Show that
 
 (v) (10 pts) Now suppose $β_0=0$. Derive an OLS estimator of $β_1$.
 	$\tilde{β}_1$ can be obtained by solving the following least squares problem
-	$$\min_{b_0,b_1}\sum\limits^n_{i=1}(Y_i-b_1X_i)^2$$
+$$\min_{b_0,b_1}\sum\limits^n_{i=1}(Y_i-b_1X_i)^2$$
 	First order conditions lead to
-	$$\sum\limits^n_{i=1}(Y_i-\tilde{\beta}_1X_i)X_i=0$$
+$$\sum\limits^n_{i=1}(Y_i-\tilde{\beta}_1X_i)X_i=0$$
 	which yields
-	$$\tilde{\beta}_1=\frac{\sum^n_{i=1}Y_iX_i}{\sum^n_{i=1}X^2_i}$$
+$$\tilde{\beta}_1=\frac{\sum^n_{i=1}Y_iX_i}{\sum^n_{i=1}X^2_i}$$
 
 
 
@@ -668,11 +683,11 @@ Based on (3), propose an estimator of $β_1$ based on the method of moments
 $$\beta_1=\frac{\mathbf{Cov}(Y_i,Z_i)}{\mathbf{Cov}(X_i,Z_i)}$$
 Propose an estimator of $β_1$ given that $\mathbf{Cov}(u_i,X_i)\neq 0$.
 	Since $\mathbf{Cov}(Z_i,u_i)=0$
-	$$\mathbf{Cov}(Y_i,Z_i)=\mathbf{Cov}(\beta_0+\beta_1 X_i+u,Z_i)=\beta_1\mathbf{Cov}(X_i,Z_i)$$
+$$\mathbf{Cov}(Y_i,Z_i)=\mathbf{Cov}(\beta_0+\beta_1 X_i+u,Z_i)=\beta_1\mathbf{Cov}(X_i,Z_i)$$
 	moreover, $\mathbf{Cov}(X_i,Z_i)\neq 0$
 	we have $\beta_1=\frac{\mathbf{Cov}(Y_i,Z_i)}{\mathbf{Cov}(X_i,Z_i)}$
 	Thus, an estimator is given by
-	$$\hat{\beta}_1=\frac{\sum^n_{i=1}(Z_i-\overline{Z})(Y_i-\overline{Y})}{\sum^n_{i=1}(X_i-\overline{X})(Z_i-\overline{Z})}$$
+$$\hat{\beta}_1=\frac{\sum^n_{i=1}(Z_i-\overline{Z})(Y_i-\overline{Y})}{\sum^n_{i=1}(X_i-\overline{X})(Z_i-\overline{Z})}$$
 
 (iii) (10 pts) In class, we have discussed a scenario where we would like to know the effect of skipping classes on exam performance: 
 $$score =β_0 + β_1\text{skipped} + u.$$
@@ -695,11 +710,11 @@ Show that such a measure is exactly equal to $β_1$. (You may use the result in 
 	(b) (6 pts) Now suppose the issue in part (a) does not exists. You have a gender dummy variable $D_i$ . Propose a regression model that help you to identify the gender inequalities in returns of education. (State clearly which parameter captures the gender inequality.)
 		Let $D_i =1$ if $i$ is a female and 0 otherwise. 
 		Consider the following regression model
-		$$Y_i=\beta_0+\beta_1X_i+\beta_2D_iX_i+u_i$$
+$$Y_i=\beta_0+\beta_1X_i+\beta_2D_iX_i+u_i$$
 		On average we have for females
-		$$Y_i=\beta_0+(\beta_1+\beta_2)X_i;\Rightarrow \Delta Y=(\beta_1+\beta_2)\Delta X\Leftrightarrow \frac{\Delta Y}{\Delta X}=\beta_1+\beta_2$$
+$$Y_i=\beta_0+(\beta_1+\beta_2)X_i;\Rightarrow \Delta Y=(\beta_1+\beta_2)\Delta X\Leftrightarrow \frac{\Delta Y}{\Delta X}=\beta_1+\beta_2$$
 		and for males
-		$$\frac{\Delta Y}{\Delta X}=\beta_1$$
+$$\frac{\Delta Y}{\Delta X}=\beta_1$$
 		Thus, one more unit of education brings additional $β_1$ and $β_1+β_2$ units of salary for male and females; respectively. The gender inequality is captured by $β_2$.
 
 
@@ -709,9 +724,9 @@ Question 3 (20 pts).
 		Note that the coefficient of the party membership is 0.124. Since the dependent variable is log earning, thus, the interpretation is that being party members increases earinings by 12.4%.
 	(b) (10 pts) Calculate the age of maximum wages
 		Denote $a_i$ be the age of individual $i$, and $y_i$ the log earnings, then, the estimates specify
-		$$y_i=0.027a_i-0.026\times \frac{a^2_i}{100}+\text{other variables}$$
+$$y_i=0.027a_i-0.026\times \frac{a^2_i}{100}+\text{other variables}$$
 		First order condition implies
-		$$\frac{\partial y_i}{\partial a_i}=0.027a_i-2\times0.00026a_i=0$$
+$$\frac{\partial y_i}{\partial a_i}=0.027a_i-2\times0.00026a_i=0$$
 		Thus the age of maximum earning is $a^*_i=51.92$.
 ![202312031710542.png (692×507) (raw.githubusercontent.com)](https://raw.githubusercontent.com/meteor0823/BlogImage/main/202312031710542.png)
 (ii) (5 pts) The Figure below captures a presentation slide of the paper by Fisman, R., Shi, J., Wang, Y., & Xu, R. (2018). Social ties and favoritism in Chinese science. Journal of Political Economy, 126(3), 1134-1171. Comment on the last bullet point.
@@ -726,27 +741,27 @@ Derive the _ommitted variable bias_ in $\beta'_1$ in terns of $\beta_1,\beta_2$ 
 1. $\beta'_1=\frac{Cov(Y,x_1)}{Var(x_1)}=\frac{Cov(\beta'_0+\beta'_1X_1+\varepsilon',x_1)}{Var(x_1)}=\frac{Cov(\beta_0+\beta_1X_1+\beta_2 X_2+\varepsilon,x_1)}{Var(x_1)}=\frac{\beta_1 Cov(X_1,X_1)+\beta_2Cov(X_1,X_2)}{Var(x_1)}=\beta_1+\frac{\beta_2Cov(X_1,X_2)}{Var(X_1)}$
 2. $Y=\beta'_0+\beta'_1X_1+\varepsilon'$
 	According to OLS 
-	$$\begin{align}\min\ Y-\beta'_0-\beta'_1X_1\\
-	\left\{\begin{array}{**lr**} \sum X_1(Y-\beta'_0-\beta'_1X_1)=0\quad(1)\\ \sum X_1(Y-\beta'_0-\beta'_1X_1)=0\quad(2)\end{array}   \right.
-	\end{align}$$
+$$\begin{align}\min\ Y-\beta'_0-\beta'_1X_1\\
+\left\{\begin{array}{**lr**} \sum X_1(Y-\beta'_0-\beta'_1X_1)=0\quad(1)\\ \sum X_1(Y-\beta'_0-\beta'_1X_1)=0\quad(2)\end{array}   \right.
+\end{align}$$
 	From $(2)$ we get
-	$$\overline{Y}=\beta'_1\overline{X}_1+\beta'_0\quad(3)$$
+$$\overline{Y}=\beta'_1\overline{X}_1+\beta'_0\quad(3)$$
 	Substitute $(3)$ into $(1)$
-	$$\begin{align}\sum X_1(Y-(\overline{Y}-\beta'_1\overline{X}_1)-\beta'_1X_1)=0\\
-	\Rightarrow \sum X_1[(Y-\overline{Y})-\beta'_1(X_1-\overline{X})]=0\\
-	\Rightarrow \sum (X_1-\overline{X})[(Y-\overline{Y})-\beta'_1(X_1-\overline{X})]=0\quad(4)
-	\end{align}$$
-	$$\begin{align}
-	Y=\beta_0+\beta_1X_1+\beta_2X_2+\varepsilon\\
-	\overline{Y}=\beta_0+\beta_1\overline{X}_1+\beta_2\overline{X}_2+\overline{\varepsilon}
-	\end{align}$$
+$$\begin{align}\sum X_1(Y-(\overline{Y}-\beta'_1\overline{X}_1)-\beta'_1X_1)=0\\
+\Rightarrow \sum X_1[(Y-\overline{Y})-\beta'_1(X_1-\overline{X})]=0\\
+\Rightarrow \sum (X_1-\overline{X})[(Y-\overline{Y})-\beta'_1(X_1-\overline{X})]=0\quad(4)
+\end{align}$$
+$$\begin{align}
+Y=\beta_0+\beta_1X_1+\beta_2X_2+\varepsilon\\
+\overline{Y}=\beta_0+\beta_1\overline{X}_1+\beta_2\overline{X}_2+\overline{\varepsilon}
+\end{align}$$
 	$(4)$ will become
-	$$\begin{align}
-	\sum (X_1-\overline{X})[\beta_1(X_1-\overline{X}_1)+\beta_2(X_2-\overline{X}_2)+(\varepsilon-\overline{\varepsilon})-\beta'_1(X_1-\overline{X})]=0\\
-	\Rightarrow \beta'_1=\beta_1+\beta_2\frac{Cov(X_1,X_2)}{Var(X_1)}+\frac{Cov(X_1,\varepsilon)}{Var(X_1)}\\
-	\text{Since }Cov(X_1,\varepsilon)=0\\
-	\beta'_1=\beta_1+\beta_2\frac{Cov(X_1,X_2)}{Var(X_1)}
-	\end{align}$$
+$$\begin{align}
+\sum (X_1-\overline{X})[\beta_1(X_1-\overline{X}_1)+\beta_2(X_2-\overline{X}_2)+(\varepsilon-\overline{\varepsilon})-\beta'_1(X_1-\overline{X})]=0\\
+\Rightarrow \beta'_1=\beta_1+\beta_2\frac{Cov(X_1,X_2)}{Var(X_1)}+\frac{Cov(X_1,\varepsilon)}{Var(X_1)}\\
+\text{Since }Cov(X_1,\varepsilon)=0\\
+\beta'_1=\beta_1+\beta_2\frac{Cov(X_1,X_2)}{Var(X_1)}
+\end{align}$$
 (ii) 要考虑$\beta_1>0$
 (iii)要考虑$\beta_2<0$
 
@@ -1237,7 +1252,7 @@ $$\begin{align}Y_i=\beta_0&+\rho D_0(\tilde{X}_i)+\beta_1 \tilde{X}_i+\beta_2 D_
 \end{align}$$
 we have $\lim_{x\downarrow c}\mathbb{E}(Y_i|X_i=x)-\lim_{x\uparrow c}\mathbb{E}(Y_i|X_i=x)=\rho$
 	Solution:
-	$$Y_i=\left\{\begin{array}{**lr**} \beta_0+\beta_1\tilde{X}_1+\beta_3 \tilde{X}^2_1\quad \text{if }x_i<0\Leftrightarrow \tilde{X}_i<0\\ \beta_0+\rho+(\beta_1+\beta_2)\tilde{X}_1+(\beta_3+\beta_4) \tilde{X}^2_1\quad \text{if }x_i>0\Leftrightarrow \tilde{X}_i>0\end{array}   \right.$$
+$$Y_i=\left\{\begin{array}{**lr**} \beta_0+\beta_1\tilde{X}_1+\beta_3 \tilde{X}^2_1\quad \text{if }x_i<0\Leftrightarrow \tilde{X}_i<0\\ \beta_0+\rho+(\beta_1+\beta_2)\tilde{X}_1+(\beta_3+\beta_4) \tilde{X}^2_1\quad \text{if }x_i>0\Leftrightarrow \tilde{X}_i>0\end{array}   \right.$$
 	When $x\Rightarrow c$
 	$x<c:\mathbb{E}(Y_i|X_i=X)=\beta_0$
 	$x>c:\mathbb{E}(Y_i|X_i=X)=\beta_0+\rho$
