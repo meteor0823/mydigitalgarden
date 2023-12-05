@@ -196,11 +196,7 @@ pf_{21}\frac{\partial x_1}{\partial w_1}+pf_{22}\frac{\partial x_2}{\partial w_1
 Using [Cramer's Rule](https://www.youtube.com/watch?v=Ot87qLTODdQ), 
 $$\frac{\partial x^*_1}{\partial w_1}=\frac{\left|\begin{array}{22}1&pf_{12}\\0&pf_{22}\end{array}\right|}{[H]}=\frac{pf_{22}}{|H|}<0(\text{since }pf_{22}<0, |H|>0)$$
 $$\frac{\partial x^*_2}{\partial w_1}=\frac{\left|\begin{array}{22}pf_{11}&1\\pf_{21}&0\end{array}\right|}{[H]}=\frac{-pf_{21}}{|H|}\left\{
-	\begin{array}{**lr**}
-	<0\quad f_{21}>0\\
-	>0\quad f_{21}<0
-	\end{array}    
-	\right.$$
+\begin{array}{**lr**}<0\quad f_{21}>0\\>0\quad f_{21}<0\end{array}    \right.$$
 
 $$\begin{align}
 pf_{11}\frac{\partial x_1}{\partial w_2}+pf_{12}\frac{\partial x_2}{\partial w_2}-0=0\\
@@ -208,12 +204,7 @@ pf_{21}\frac{\partial x_1}{\partial w_2}+pf_{22}\frac{\partial x_2}{\partial w_2
 =[H]\left[\begin{array}{1}\frac{\partial x_1}{\partial w_2}\\\frac{\partial x_2}{\partial w_2}\end{array}\right]=\left[\begin{array}{1}1\\0\end{array}\right]
 \end{align}$$
 Using [Cramer's Rule](https://www.youtube.com/watch?v=Ot87qLTODdQ), 
-$$\frac{\partial x^*_1}{\partial w_2}=\frac{\left|\begin{array}{22}0&pf_{12}\\1&pf_{22}\end{array}\right|}{[H]}=\frac{-pf_{12}}{|H|}\left\{
-	\begin{array}{**lr**}
-	<0\quad f_{21}>0\\
-	>0\quad f_{21}<0
-	\end{array}    
-	\right.$$
+$$\frac{\partial x^*_1}{\partial w_2}=\frac{\left|\begin{array}{22}0&pf_{12}\\1&pf_{22}\end{array}\right|}{[H]}=\frac{-pf_{12}}{|H|}\left\{\begin{array}{**lr**}<0\quad f_{21}>0\\>0\quad f_{21}<0\end{array}    \right.$$
 $$\frac{\partial x^*_2}{\partial w_2}=\frac{\left|\begin{array}{22}pf_{11}&0\\pf_{21}&1\end{array}\right|}{[H]}=\frac{pf_{11}}{|H|}<0(\text{since }pf_{11}<0, |H|>0)$$
 
 
@@ -313,7 +304,7 @@ If $f(x)=x^a_1x^b_2$ , what is the output elasticity of each factor?
 
 1.5 What is the elasticity of scale of the CES technology, $f (x_1, x_2)=(x^{\rho}_1+ x^{\rho}_2)^{\frac{1}{\rho}}$?
 	Key point is to understand the definition of the **the elasticity of scale**
-	$$f (tx_1,tx_2)=[(tx_1)^{\rho}+ (tx_2)^{\rho}]^{\frac{1}{\rho}}=t[x^{\rho}_1+x^{\rho}_2]^{\frac{1}{\rho}}=tf(x_1,x_2)$$
+$$f (tx_1,tx_2)=[(tx_1)^{\rho}+ (tx_2)^{\rho}]^{\frac{1}{\rho}}=t[x^{\rho}_1+x^{\rho}_2]^{\frac{1}{\rho}}=tf(x_1,x_2)$$
 	Substitute $tx_i$ for $i = 1, 2$ to get
 	This implies that the CES function exhibits constant returns to scale and hence has an elasticity of scale of 1.
 
@@ -327,20 +318,20 @@ If $f(x)=x^a_1x^b_2$ , what is the output elasticity of each factor?
 
 2.3 Calculate explicitly the profit function for the technology $y = x^a$, for $0 < a < 1$ and verify that it is homogeneous and convex in $(p, w)$.
 	In the text the supply function and the factor demands were computed for this technology. Using those results, the profit function is given by
-	$$\pi(p,w)=p(\frac{w}{ap})^{\frac{a}{a-1}}-w(\frac{w}{ap})^{\frac{1}{a-1}}$$
+$$\pi(p,w)=p(\frac{w}{ap})^{\frac{a}{a-1}}-w(\frac{w}{ap})^{\frac{1}{a-1}}$$
 	To prove homogeneity, note that
-	$$\pi(tp,tw)=tp(\frac{w}{ap})^{\frac{a}{a-1}}-tw(\frac{w}{ap})^{\frac{1}{a-1}}=t\pi(p,w)$$
+$$\pi(tp,tw)=tp(\frac{w}{ap})^{\frac{a}{a-1}}-tw(\frac{w}{ap})^{\frac{1}{a-1}}=t\pi(p,w)$$
 	which implies that π(p, w) is a homogeneous function of degree 1. 
 	Before computing the Hessian matrix, factor the profit function in the following way:
-	$$\pi(p,w)=p^{\frac{1}{1-a}}w^{\frac{a}{a-1}}(a^{\frac{a}{1-a}}-a^{\frac{1}{1-a}})=p^{\frac{1}{1-a}}w^{\frac{a}{a-1}}\phi(a)$$
+$$\pi(p,w)=p^{\frac{1}{1-a}}w^{\frac{a}{a-1}}(a^{\frac{a}{1-a}}-a^{\frac{1}{1-a}})=p^{\frac{1}{1-a}}w^{\frac{a}{a-1}}\phi(a)$$
 	where $\phi(a)$ is strictly positive for $0<a<1$
 	The Hessian matrix can now be written as
-	$$\begin{aligned}
+$$\begin{aligned}
 D^{2}\pi(p,\omega)& =\begin{pmatrix}\frac{\partial^2\pi(p,w)}{\partial p^2}&\frac{\partial^2\pi(p,w)}{\partial p\partial w}\\\frac{\partial^2\pi(p,w)}{\partial w\partial p}&\frac{\partial^2\pi(p,w)}{\partial w^2}\end{pmatrix}  \\
 &=\begin{pmatrix}\frac a{(1-a)^2}p^{\frac{2a-1}{1-a}}w^{\frac a{a-1}}&-\frac a{(1-a)^2}p^{\frac a{1-a}}w^{\frac1{a-1}}\\\\-\frac a{(1-a)^2}p^{\frac a{1-a}}w^{\frac1{a-1}}&\frac a{(1-a)^2}p^{\frac1{1-a}}w^{\frac{2-a}{a-1}}\end{pmatrix}\phi(a).
 \end{aligned}$$
 	The principal minors of this matrix are
-	$$\frac{a}{(1-a)^2}p^{\frac{2a-1}{1-a}}w^{\frac{a}{a-1}}\phi(a)>0$$
+$$\frac{a}{(1-a)^2}p^{\frac{2a-1}{1-a}}w^{\frac{a}{a-1}}\phi(a)>0$$
 	and 0. Therefore, the Hessian is a positive semidefinite matrix, which implies that $π(p, w)$ is convex in $(p, w)$.
 ==暂时没懂== 懂了
 
@@ -392,13 +383,11 @@ $$\mathbf{y}=[f(x_1,x_2),-x_1,-x_2]$$
 	1. Proof: Let $y$ be a profit-maximizing net output vector at $p$, so that $py\geq py'$ for all $\mathbf{y'}$ in Y. It follows that for $t\geq 0$, $tpy\geq tpy'$ for all $\mathbf{y'}$ in Y. Hence $y$ also maximizes profits at price $tp$. Thus $\pi(t\mathbf{p})=t\mathbf{py}=t\pi(\mathbf{p})$
 3. Convex in $p$.
 	1. Let $y$ maximize profits at $p$. $\mathbf{y}'$ maximize profits at $\mathbf{p}'$, and $\mathbf{y}"$ maximize profits at $\mathbf{p}"$. Then we have
-	2. $$\pi(\mathbf{p}'')=\mathbf{p}''\mathbf{y}''=(t\mathbf{p}+(1-t)\mathbf{p}')\mathbf{y}''=t\mathbf{p}\mathbf{y}''+(1-t)\mathbf{p}'\mathbf{y}''\tag{3.1}$$
+	2. $\pi(\mathbf{p}'')=\mathbf{p}''\mathbf{y}''=(t\mathbf{p}+(1-t)\mathbf{p}')\mathbf{y}''=t\mathbf{p}\mathbf{y}''+(1-t)\mathbf{p}'\mathbf{y}''\tag{3.1}$
 	3. By the definition of profit maximization, we know that
-	4. $$\begin{align} t\mathbf{p}\mathbf{y}''\leq t\mathbf{py}=t\pi(\mathbf{p})\\
-	(1-t)\mathbf{p}'\mathbf{y}'' \leq (1-t)\mathbf{p}'\mathbf{y}'=(1-t)\pi(\mathbf{p}')
-	\end{align}$$
+	4. $\begin{align} t\mathbf{p}\mathbf{y}''\leq t\mathbf{py}=t\pi(\mathbf{p})\\(1-t)\mathbf{p}'\mathbf{y}'' \leq (1-t)\mathbf{p}'\mathbf{y}'=(1-t)\pi(\mathbf{p}')\end{align}$
 	5. Adding these two inequalities and using (3.1), we have
-	6. $$\pi(\mathbf{p}'')\leq t\pi(\mathbf{p})+(1+t)\pi(\mathbf{p}')$$
+	6. $\pi(\mathbf{p}'')\leq t\pi(\mathbf{p})+(1+t)\pi(\mathbf{p}')$
 4. Continuous in $p$. 
 ==Don't understand proof so far==
 
@@ -415,15 +404,15 @@ Suppose that instead we are given the profit function and are asked to find the 
 Let $y_i(p)$ be the firm's net supply function for good $i$. Then
 $$y_i(p)=\frac{\partial \pi(\mathbf{p})}{\partial p_i}\text{ for }i=1,\dots,n$$
 	[Proof](https://www.youtube.com/watch?v=V6Rziu74uhA): 
-	$$\begin{align}
-	\max \pi(y,x_1,x_2)=py-w_1x_1-w_2x_2\\
-	s.t.\ f(x_1,x_2)\geq q\\
-	\text{Define }G(q,x_1,x_2)=q-f(x_1,x_2)\leq 0\\
-	G\text{ has no parameter such as }p,w_1,w_2\\
-	V(p,w_1,w_2)\text{ is profit}\\
-	\frac{\partial V}{\partial p}=\frac{\partial \pi}{\partial p}-\lambda \frac{\partial G}{\partial p}=y-\lambda(0)=\hat{y}(p,w_1,w_2)\\
-	\frac{\partial V}{\partial w_i}=\frac{\partial \pi}{\partial w_i}-\lambda\frac{\partial G}{\partial w_i}=-\hat{x}_i(p,w_1,w_2)\quad (\text{Factor Demand Function})
-	\end{align}$$
+$$\begin{align}
+\max \pi(y,x_1,x_2)=py-w_1x_1-w_2x_2\\
+s.t.\ f(x_1,x_2)\geq q\\
+\text{Define }G(q,x_1,x_2)=q-f(x_1,x_2)\leq 0\\
+G\text{ has no parameter such as }p,w_1,w_2\\
+V(p,w_1,w_2)\text{ is profit}\\
+\frac{\partial V}{\partial p}=\frac{\partial \pi}{\partial p}-\lambda \frac{\partial G}{\partial p}=y-\lambda(0)=\hat{y}(p,w_1,w_2)\\
+\frac{\partial V}{\partial w_i}=\frac{\partial \pi}{\partial w_i}-\lambda\frac{\partial G}{\partial w_i}=-\hat{x}_i(p,w_1,w_2)\quad (\text{Factor Demand Function})
+\end{align}$$
 { #HotellingLemma}
 
 
@@ -454,18 +443,18 @@ But secondly, there will be an indirect effect: the increase in the output price
 3.3 Given the production function $f (x_1, x_2) = a_1 \ln x_1 + a_2 \ln x_2$, calculate the profit-maximizing demand and supply functions, and the profit function, For simplicity assume an interior solution. Assume that $a_i> 0$. 
 	Solution:
 	The first-order conditions are
-	$$\begin{align}
-	a_1\frac{p}{x_1}-w_1=0\\
-	a_2\frac{p}{x_2}-w_2=0
-	\end{align}$$
+$$\begin{align}
+a_1\frac{p}{x_1}-w_1=0\\
+a_2\frac{p}{x_2}-w_2=0
+\end{align}$$
 	which can easily be solved for the factor demand functions. Substituting into the objective function gives us the profit function 
 
 3.5. Given the production function $f (x_1, x_2) = \min\{x_1, x_2\}^a$, calculate the profit-maximizing demand and supply functions, and the profit function. What restriction must a satisfy?
 	Solution:
 	If $w_i$ is strictly positive, the firm will never use more of factor $i$ than it needs to, which implies $x_1 = x_2$. Hence the profit maximization problem can be written as 
-	$$\max\ px^a_1-w_1x_1-w_2x_2$$
+$$\max\ px^a_1-w_1x_1-w_2x_2$$
 	The first-order condition is
-	$$pax^{a-1}_1-(w_1+w_2)=0$$
+$$pax^{a-1}_1-(w_1+w_2)=0$$
 	Demand function: $x_1=(\frac{w_1+w_2}{pa})^{\frac{1}{a-1}}$
 	Supply function: $y=p(\frac{w_1+w_2}{pa})^{\frac{a}{a-1}}=p^{\frac{1}{1-a}}(\frac{w_1+w_2}{a})^{\frac{a}{a-1}}$
 	In order for a maximum to exist, $a<1$ ==最后一个怎么证明的没搞懂==
@@ -515,7 +504,7 @@ $$\frac{\partial x^*}{\partial w_1}=\frac{\partial x^*_1}{\partial w_1}+\frac{\p
 Envelope Theorem 
 $$\frac{df^*(a)}{da}=\frac{\partial f(x^*(a),a)}{\partial a}$$
 	Proof:
-	$$\frac{df^*(a)}{d a}=\overbrace{\underbrace{\frac{\partial f^*}{\partial x}}_{\text{FOC}=0}\underbrace{\frac{\partial x^*}{\partial a}}_{\frac{dx}{da}}}^{0}+\frac{\partial f^*}{\partial a}$$
+$$\frac{df^*(a)}{d a}=\overbrace{\underbrace{\frac{\partial f^*}{\partial x}}_{\text{FOC}=0}\underbrace{\frac{\partial x^*}{\partial a}}_{\frac{dx}{da}}}^{0}+\frac{\partial f^*}{\partial a}$$
 
 
 
@@ -713,9 +702,9 @@ $$\text{short-run marginal cost=}\frac{w_1}{a}(\frac{y}{k})^{\frac{1-a}{a}}$$
 2. Homogeneous of degree 1 in $w$. $c(t\mathbf{w},y)=tc(\mathbf{w},y)$ for $t>0$
 3. Concave in $w$. $c(t\mathbf{w}+(1-t)\mathbf{w'},y)\geq tx(\mathbf{w},y)+(1-t)c(\mathbf{w'},y)$ for $0\leq t \leq 1$
 	1. Let $(\mathbf{w}, x)$ and $(\mathbf{w}', x')$ be two cost-minimizing price-factor combinations and let $\mathbf{w}" = t\mathbf{w} + (1-t)\mathbf{w}'$ for any $0 \leq t\leq 1$. Now,
-	2. $$c(\mathbf{w}'',y)=\mathbf{w}''\mathbf{x}''=t\mathbf{w}\mathbf{x}''+(1+t)\mathbf{w}'\mathbf{x}''$$
+	2. $c(\mathbf{w}'',y)=\mathbf{w}''\mathbf{x}''=t\mathbf{w}\mathbf{x}''+(1+t)\mathbf{w}'\mathbf{x}''$
 	3. Since $\mathbf{x}''$ is not necessarily the cheapest way to produce y at prices $\mathbf{w}'$ or $\mathbf{w}$, we have $\mathbf{wx}" \geq c(\mathbf{w}, y)$ and $\mathbf{w}'\mathbf{x}" \geq c(\mathbf{w}', y)$. Thus,
-	4. $$c(\mathbf{w}'',y)\geq tx(\mathbf{w},y)+(1+t)c(\mathbf{w}',y)$$
+	4. $c(\mathbf{w}'',y)\geq tx(\mathbf{w},y)+(1+t)c(\mathbf{w}',y)$
 4. Continuous in $w$. $c(\mathbf{w},y)$ is continuous as a function of $w$, for $w>0$
 Proof is on P86
 
@@ -808,11 +797,11 @@ the derivative of the Marshallian demand with respect to price and income. This 
 $$\frac{\partial x_j(\mathbf{p},m)}{\partial \mathbf{p}_i}=\frac{\partial h_j(\mathbf{p},v(\mathbf{p},m))}{\partial p_i}-\frac{\partial x_j(\mathbf{p},m)}{\partial m}x_i(\mathbf{p},m)$$
 	Proof:
 	It is identically true that
-	$$h_j(\mathbf{p},u^*)\equiv x_j(\mathbf{p},e(\mathbf{p},u^*))$$
+$$h_j(\mathbf{p},u^*)\equiv x_j(\mathbf{p},e(\mathbf{p},u^*))$$
 	We can differentiate this with respect to $p_i$ and evaluate the derivative at $\mathbf{p}^*$ to get
-	$$\frac{\partial h_j(\mathbf{p}^*,u^*)}{\partial p_i}=\frac{\partial x_j(\mathbf{p}^*,m^*)}{\partial p_i}+\frac{\partial x_j(p^*,m^*)}{d m}\frac{\partial e(\mathbf{p}^*,u^*)}{\partial p_i}$$
-	According to ![[Mathematics for Economic Analysis#^ShepherdLemma\|Mathematics for Economic Analysis#^ShepherdLemma]]
-	$$\frac{\partial x_j(\mathbf{p}^*,m^*)}{\partial \mathbf{p}_i}=\frac{\partial h_j(\mathbf{p}^*,u^*)}{\partial p_i}-\frac{\partial x_j(\mathbf{p}^*,m^*)}{\partial m}x^*_i(\mathbf{p},m)$$
+$$\frac{\partial h_j(\mathbf{p}^*,u^*)}{\partial p_i}=\frac{\partial x_j(\mathbf{p}^*,m^*)}{\partial p_i}+\frac{\partial x_j(p^*,m^*)}{d m}\frac{\partial e(\mathbf{p}^*,u^*)}{\partial p_i}$$
+	According to ShepherdLemma
+$$\frac{\partial x_j(\mathbf{p}^*,m^*)}{\partial \mathbf{p}_i}=\frac{\partial h_j(\mathbf{p}^*,u^*)}{\partial p_i}-\frac{\partial x_j(\mathbf{p}^*,m^*)}{\partial m}x^*_i(\mathbf{p},m)$$
 
 Divide both sides by $\Delta p_i$:
 $$\frac{x_i(\mathbf{p}+\Delta\mathbf{p},m)-x_i(\mathbf{p},m)}{\Delta p_i}=\frac{\Delta x_i}{\Delta p_i}-x_i\frac{\Delta x_i}{\Delta m}$$
@@ -995,19 +984,19 @@ Chapter 8 Problems: 8.2, 8.5, 8.6*, 8.8, 8.11, 8.12, 8.14, 8.16
 4.1 Prove rigorously that profit maximization implies cost minimization
 	Let $\mathbf{x}^∗$ be a profit-maximizing input vector for prices $(p,\mathbf{w})$. This means that $\mathbf{x}^∗$ must satisfy $pf(\mathbf{x}^∗) − w\mathbf{x}^∗ ≥ pf(\mathbf{x}) − w\mathbf{x}$ for all permissible $\mathbf{x}$. 
 	Assume that $\mathbf{x}^∗$ does not minimize cost for the output $f(\mathbf{x}^∗)$; i.e., there exists a vector $\mathbf{x}^{∗∗}$ such that $f(\mathbf{x}^{∗∗}) ≥ f(\mathbf{x}^∗)$ and $\mathbf{w}(\mathbf{x}^{∗∗}− \mathbf{x}^∗ ) < 0$. But then the profits achieved with $\mathbf{x}^{∗∗}$ must be greater than those achieved with $\mathbf{x}^∗$ :
-	$$pf(\mathbf{x}^{**})-\mathbf{wx}^{**}\geq pf(\mathbf{x}^{*})-\mathbf{wx}^{**}\geq pf(\mathbf{x}^{*})-\mathbf{wx}^{*}$$
+$$pf(\mathbf{x}^{**})-\mathbf{wx}^{**}\geq pf(\mathbf{x}^{*})-\mathbf{wx}^{**}\geq pf(\mathbf{x}^{*})-\mathbf{wx}^{*}$$
 	which contradicts the assumption that $\mathbf{x}^∗$ was profit-maximizing.
 
 4.8 A firm has a production function $y = x_1x_2$. If the minimum cost of production at $w_1= w_2 = 1$ is equal to 4, what is $y$ equal to?
 	Solution
-	$$\begin{align}
-	\min x_1+x_2\\
-	x_1x_2=y
-	\end{align}$$
+$$\begin{align}
+\min x_1+x_2\\
+x_1x_2=y
+\end{align}$$
 	Substitute to get the unconstrained minimization problem
-	$$\min x_1+\frac{y}{x_1}$$
+$$\min x_1+\frac{y}{x_1}$$
 	The first order condition is
-	$$1-\frac{y}{x^2_1}$$
+$$1-\frac{y}{x^2_1}$$
 	which implies $x_1=\sqrt{y}$. By symmetry, $x_2=\sqrt{y}$. We are given that $2\sqrt{y}=4$, so $\sqrt{y}=2$, from which it follows that $y=4$
 
 5.9. A typical Silicon Valley firm produces output of chips $y$ using a cost function $c(y)$, which exhibits increasing marginal costs. Of the chips it produces, a fraction $1 - a$ are defective and cannot be sold. Working chips can be sold at a price $p$ and the chip market is highly competitive. 
@@ -1031,16 +1020,16 @@ Chapter 8 Problems: 8.2, 8.5, 8.6*, 8.8, 8.11, 8.12, 8.14, 8.16
 	In a competitive market, the equilibrium price is determined by the intersection of the market demand $(D(p))$ and market supply. Given that there are $n$ identical chip producers, each with cost function $c(y)$, the market supply is the sum of the individual firm's supply, which can be expressed as $n \cdot y(a)$, where $y(a)$ is the quantity of working chips produced by each firm.
 	To determine the equilibrium price, we equate the market demand and market supply:
 	
-	$$D(p) = n \cdot y(a)$$
+$$D(p) = n \cdot y(a)$$
 	Now, let's differentiate both sides of the equation with respect to $a$:
 	
-	$$\frac{d}{da} D(p) = \frac{d}{da} (n \cdot y(a))$$
+$$\frac{d}{da} D(p) = \frac{d}{da} (n \cdot y(a))$$
 	Using the chain rule, we have:
 	
-	$$\frac{dD}{dp} \cdot \frac{dp}{da} = n \cdot \frac{dy}{da}$$
+$$\frac{dD}{dp} \cdot \frac{dp}{da} = n \cdot \frac{dy}{da}$$
 	Rearranging the equation, we can solve for $\frac{dp}{da}$:
 	
-	$$\frac{dp}{da} = \frac{n}{\frac{dD}{dp}} \cdot \frac{dy}{da}$$
+$$\frac{dp}{da} = \frac{n}{\frac{dD}{dp}} \cdot \frac{dy}{da}$$
 	To determine the sign of $\frac{dp}{da}$, we need to consider the signs of $\frac{dD}{dp}$ and $\frac{dy}{da}$.
 	Since the cost function $c(y)$ exhibits increasing marginal costs, the marginal cost of production is positive. As a result, the supply curve of each individual firm slopes upward, indicating that $\frac{dy}{da}$ is positive.
 	The sign of $\frac{dD}{dp}$ depends on the demand function $D(p)$. Without specific information about the form of the demand function, we cannot determine its sign.
@@ -1052,10 +1041,10 @@ Chapter 8 Problems: 8.2, 8.5, 8.6*, 8.8, 8.11, 8.12, 8.14, 8.16
 	$\mathbf{x}=(1,1,0,0)$
 	Review 3.5, $\min\{x_1,x_2\}$ means $x_1=x_2$. $\min\{x_3,x_4\}$ means $x_3=x_4$.
 	We assume $x_1=x_2=a,x_3=x_4=b$
-	$$\begin{align}\min 3a+7b\\
-	a+b=1\\
-	a\geq 0\\
-	b\geq0\end{align}$$
+$$\begin{align}\min 3a+7b\\
+a+b=1\\
+a\geq 0\\
+b\geq0\end{align}$$
 	We got $a=1,b=0$. Therefore, $\mathbf{x}=(1,1,0,0)$
 (b) What is the cost function? 
 	$c(w_1,w_2,w_3,w_4)=\min\{w_1+w_2,w_3+w_4\}y$
@@ -1063,11 +1052,11 @@ Chapter 8 Problems: 8.2, 8.5, 8.6*, 8.8, 8.11, 8.12, 8.14, 8.16
 	Constant return to scale
 (d) Another firm has a production function $f (x_1, x_2,x_3,x_4) = \min\{x_1 + x_2, x_3 + x_4\}$. What is the vector of conditional factor demands to produce 1 unit of output when prices are $w = (1,2,3,4)$? 
 	$\min\{x_1 + x_2, x_3 + x_4\}$ means $x_1+x_2=x_3+x_4=1$.
-	$$\begin{align}
-	\min\ x_1+2x_2+3x_3+4x_4\\
-	x_1+x_2=x_3+x_4=1\\
-	x_1\geq 0,x_2\geq0,x_3\geq 0,x_4\geq 0
-	\end{align}$$
+$$\begin{align}
+\min\ x_1+2x_2+3x_3+4x_4\\
+x_1+x_2=x_3+x_4=1\\
+x_1\geq 0,x_2\geq0,x_3\geq 0,x_4\geq 0
+\end{align}$$
 	$x_1+2x_2+3x_3+4x_4=x_2+1+3+x_4$
 	To make it minimum, $x_2=x_4=0$. Therefore, $x_1=x_3=1$
 	the vector of conditional factor demands=$(1,0,1,0)$
@@ -1081,7 +1070,7 @@ Chapter 8 Problems: 8.2, 8.5, 8.6*, 8.8, 8.11, 8.12, 8.14, 8.16
 7.2 A consumer has a utility function $u(x_1, x_2) = \max\{x_1, x_2\}$. What is the consumer's demand function for good 1? What is his indirect utility function? What is his expenditure function?
 	Solution:
 	The demand function is
-	$$x_1=\left\{\begin{array}{**lr**} m/p_1\quad \text{if }p_1<p_2\\ \text{any } x_1\text{ and }x_2 \text{ such that }p_1x_1+p_2x_2=m\quad \text{if }p_1=p_2\\ 0\quad \text{if }p_1>p_2\end{array}   \right.$$
+$$x_1=\left\{\begin{array}{**lr**} m/p_1\quad \text{if }p_1<p_2\\ \text{any } x_1\text{ and }x_2 \text{ such that }p_1x_1+p_2x_2=m\quad \text{if }p_1=p_2\\ 0\quad \text{if }p_1>p_2\end{array}   \right.$$
 	The indirect utility function is $v(p_1, p_2, m) = \max\{m/p_1, m/p_2\}$, and the expenditure function is $e(p_1, p_2, u) = u\min\{p_1, p_2\}$.
 
 7.5 A consumer has a direct utility function of the form 
@@ -1106,53 +1095,53 @@ Good 1 is a discrete good; the only possible levels of consumption of good 1 are
 
 8.6 Use the utility function $u(x_1, x_2) = x^{\frac{1}{2}}_1x^{\frac{1}{3}}_2$; and the budget constraint $m = p_1x_1 +p_2x_2$ to calculate $x(\mathbf{p},m), v(\mathbf{p},m), h(\mathbf{p},u)$ and $e(\mathbf{p},u)$.
 	Solution
-	$$\mathcal{L}(\mathbf{x},\lambda)=x^{\frac{1}{2}}_1x^{\frac{1}{3}}_2-\lambda(p_1x_1+p_2x_2-m)$$
+$$\mathcal{L}(\mathbf{x},\lambda)=x^{\frac{1}{2}}_1x^{\frac{1}{3}}_2-\lambda(p_1x_1+p_2x_2-m)$$
 	Derivatives,
-	$$\begin{align}
-	\frac{1}{2}x^{-\frac{1}{2}}_1x^{\frac{1}{3}}_2=\lambda p_1\\
-	\frac{1}{3}x^{\frac{1}{2}}_1x^{-\frac{2}{3}}_2=\lambda p_2\\
-	p_1x_1+p_2x_2=m
-	\end{align}$$
+$$\begin{align}
+\frac{1}{2}x^{-\frac{1}{2}}_1x^{\frac{1}{3}}_2=\lambda p_1\\
+\frac{1}{3}x^{\frac{1}{2}}_1x^{-\frac{2}{3}}_2=\lambda p_2\\
+p_1x_1+p_2x_2=m
+\end{align}$$
 	Solving, we get
-	$$x_1(\mathbf{p},m)=\frac{3m}{5p_1},x_2(\mathbf{p},m)=\frac{2m}{5p_2}$$
+$$x_1(\mathbf{p},m)=\frac{3m}{5p_1},x_2(\mathbf{p},m)=\frac{2m}{5p_2}$$
 	Plugging these demands into the utility function, we get the indirect utility function
-	$$v(\mathbf{p},m)=U\big(\mathbf{x}(\mathbf{p},m)\big)=(\frac{3m}{5p_1})^{\frac{1}{2}}(\frac{2m}{5p_2})^{\frac{1}{3}}=(\frac{m}{5})^{\frac{5}{6}}(\frac{3}{p_1})^{\frac{1}{2}}(\frac{2}{p_2})^{\frac{1}{3}}$$
+$$v(\mathbf{p},m)=U\big(\mathbf{x}(\mathbf{p},m)\big)=(\frac{3m}{5p_1})^{\frac{1}{2}}(\frac{2m}{5p_2})^{\frac{1}{3}}=(\frac{m}{5})^{\frac{5}{6}}(\frac{3}{p_1})^{\frac{1}{2}}(\frac{2}{p_2})^{\frac{1}{3}}$$
 	Rewrite the above expression replacing $v(\mathbf{p}, m)$ by $u$ and $m$ by $e(\mathbf{p}, u)$. Then solve it for $e(·)$ to get (the function that relates income and utility in this way-the inverse of the indirect utility function-is known as the expenditure function and is denoted by $e(\mathbf{p}, u)$.) 
 	==这一步推导没懂== 懂了，把$u=(\frac{m}{5})^{\frac{5}{6}}(\frac{3}{p_1})^{\frac{1}{2}}(\frac{2}{p_2})^{\frac{1}{3}}$ 反过来， 根据教材P103 
-	$$e(\mathbf{p},u)=5(\frac{p_1}{3})^{\frac{3}{5}}(\frac{p_2}{2})^{\frac{2}{5}}u^{\frac{6}{5}}$$
+$$e(\mathbf{p},u)=5(\frac{p_1}{3})^{\frac{3}{5}}(\frac{p_2}{2})^{\frac{2}{5}}u^{\frac{6}{5}}$$
 	Finally, since $hi = ∂e/∂p_i$, the Hicksian demands are
-	$$h_1(\mathbf{p},u)=(\frac{p_1}{3})^{-\frac{2}{5}}(\frac{p_2}{2})^{\frac{2}{5}}u^{\frac{6}{5}}$$
+$$h_1(\mathbf{p},u)=(\frac{p_1}{3})^{-\frac{2}{5}}(\frac{p_2}{2})^{\frac{2}{5}}u^{\frac{6}{5}}$$
 	and
-	$$h_2(\mathbf{p},u)=(\frac{p_1}{3})^{\frac{3}{5}}(\frac{p_2}{2})^{-\frac{3}{5}}u^{\frac{6}{5}}$$
+$$h_2(\mathbf{p},u)=(\frac{p_1}{3})^{\frac{3}{5}}(\frac{p_2}{2})^{-\frac{3}{5}}u^{\frac{6}{5}}$$
 
 
 ### Quiz 2
 Consider the CES technology $y=(\alpha x^{\rho}_1+\beta x^{\rho}_2)^{\frac{1}{\rho}}$ with $\alpha \neq \beta$ and $\rho=\frac{1}{2}$. 
 1. Solve for the conditional input demand function, $x^{\#}_1(p_1,p_2,y_0)$ and $x^{\#}_2(p_1,p_2,y_0)$
 	Solution:
-	$$\begin{align}\min\ w_1x_1+w_2x_2\\ \text{s.t. }(\alpha x^{\rho}_1+\beta x^{\rho}_2)^{\frac{1}{\rho}}=y_0\\ \Rightarrow \frac{\alpha}{\beta}\frac{x^{-\frac{1}{2}}_1}{x^{-\frac{1}{2}}_2}=\frac{w_1}{w_2}\\ x^{\#}_1=\frac{y_0}{(\alpha+\frac{w_1}{w_2}\frac{\beta^2}{\alpha})^2}=\frac{w^2_2 \alpha^2}{(w^2_2\alpha^2+w_1\beta^2)^2}y_0\\ x^{\#}_2=\frac{y_0}{(\beta+\frac{w_2}{w_1}\frac{\alpha^2}{\beta})^2}  \end{align}$$
+$$\begin{align}\min\ w_1x_1+w_2x_2\\ \text{s.t. }(\alpha x^{\rho}_1+\beta x^{\rho}_2)^{\frac{1}{\rho}}=y_0\\ \Rightarrow \frac{\alpha}{\beta}\frac{x^{-\frac{1}{2}}_1}{x^{-\frac{1}{2}}_2}=\frac{w_1}{w_2}\\ x^{\#}_1=\frac{y_0}{(\alpha+\frac{w_1}{w_2}\frac{\beta^2}{\alpha})^2}=\frac{w^2_2 \alpha^2}{(w^2_2\alpha^2+w_1\beta^2)^2}y_0\\ x^{\#}_2=\frac{y_0}{(\beta+\frac{w_2}{w_1}\frac{\alpha^2}{\beta})^2}  \end{align}$$
 2. In this case with the CES technology, verify that $\frac{dx^{\#}_1}{dp_2}=\frac{dx^{\#}_2}{dp_1}$
 	Solution:
 	$\frac{dx^{\#}_1}{dw_2}$
 	$x^{\#}_1=y_0 t^{-2}$
 	$t=\alpha+k\frac{\beta^2}{\alpha}$
 	$k=\frac{w_1}{w_2}$
-	$$\begin{align}\frac{dx^{\#}_1}{dw_2}&=(y_0t^{-2})'(\alpha+k\frac{\beta^2}{\alpha})'(\frac{w_1}{w_2})'\\
-	&=y_0(-2)t^{-3}(\frac{\beta^2}{\alpha})(-1)w_1w^{-2}_2\\
-	&=y_0\frac{2(\frac{\beta^2}{\alpha})w_1w^{-2}_2}{(\alpha+\frac{w_1}{w_2}\frac{\beta^2}{\alpha})^3}\\
-	&=y_0\frac{2(\frac{\beta^2}{\alpha})w_1w^{-2}_2\cdot w_2^3\alpha^3}{(w_2\alpha^2+w_1\beta^2)^3}\\
-	&=y_0\frac{2{\alpha^2\beta^2}w_1w_2}{(w_2\alpha^2+w_1\beta^2)^3}
-	\end{align}$$
+$$\begin{align}\frac{dx^{\#}_1}{dw_2}&=(y_0t^{-2})'(\alpha+k\frac{\beta^2}{\alpha})'(\frac{w_1}{w_2})'\\
+&=y_0(-2)t^{-3}(\frac{\beta^2}{\alpha})(-1)w_1w^{-2}_2\\
+&=y_0\frac{2(\frac{\beta^2}{\alpha})w_1w^{-2}_2}{(\alpha+\frac{w_1}{w_2}\frac{\beta^2}{\alpha})^3}\\
+&=y_0\frac{2(\frac{\beta^2}{\alpha})w_1w^{-2}_2\cdot w_2^3\alpha^3}{(w_2\alpha^2+w_1\beta^2)^3}\\
+&=y_0\frac{2{\alpha^2\beta^2}w_1w_2}{(w_2\alpha^2+w_1\beta^2)^3}
+\end{align}$$
 	$\frac{dx^{\#}_2}{dw_1}$
 	$x^{\#}_2=y_0 t^{-2}$
 	$t=\alpha+k\frac{\alpha^2}{\beta}$
 	$k=\frac{w_2}{w_1}$
-	$$\begin{align}\frac{dx^{\#}_2}{dw_1}&=(y_0t^{-2})'(\alpha+k\frac{\alpha^2}{\beta})'(\frac{w_2}{w_1})'\\
-	&=y_0(-2)t^{-3}(\frac{\alpha^2}{\beta})(-1)w_2w^{-2}_1\\
-	&=y_0\frac{2(\frac{\alpha^2}{\beta})w_2w^{-2}_1}{(\beta+\frac{w_2}{w_1}\frac{\alpha^2}{\beta})^3}\\
-	&=y_0\frac{2(\frac{\alpha^2}{\beta})w_2w^{-2}_1\cdot w_1^3\beta^3}{(w_1\beta^2+w_2\alpha^2)^3}\\
-	&=y_0\frac{2{\alpha^2\beta^2}w_1w_2}{(w_2\alpha^2+w_1\beta^2)^3}
-	\end{align}$$
+$$\begin{align}\frac{dx^{\#}_2}{dw_1}&=(y_0t^{-2})'(\alpha+k\frac{\alpha^2}{\beta})'(\frac{w_2}{w_1})'\\
+&=y_0(-2)t^{-3}(\frac{\alpha^2}{\beta})(-1)w_2w^{-2}_1\\
+&=y_0\frac{2(\frac{\alpha^2}{\beta})w_2w^{-2}_1}{(\beta+\frac{w_2}{w_1}\frac{\alpha^2}{\beta})^3}\\
+&=y_0\frac{2(\frac{\alpha^2}{\beta})w_2w^{-2}_1\cdot w_1^3\beta^3}{(w_1\beta^2+w_2\alpha^2)^3}\\
+&=y_0\frac{2{\alpha^2\beta^2}w_1w_2}{(w_2\alpha^2+w_1\beta^2)^3}
+\end{align}$$
 	Therefore, $\frac{dx^{\#}_1}{dp_2}=\frac{dx^{\#}_2}{dp_1}$
 3. Use the Shephard's Lemma to show $\frac{dx^{\#}_1}{dp_2}=\frac{dx^{\#}_2}{dp_1}$ in the general case.
 	Solution:
@@ -1161,7 +1150,7 @@ Consider the CES technology $y=(\alpha x^{\rho}_1+\beta x^{\rho}_2)^{\frac{1}{\r
 	$\Rightarrow \frac{d^{\#}_1}{dp_2}=\frac{d^2 c}{dp_1p_2}\quad \frac{d^{\#}_2}{dp_1}=\frac{d^2c}{dp_2p_1}$
 4. Given the CES production function, what is the firm's short-run total cost function when $x_2$ is fixed in the short-run?
 	Solution:
-	$$\left\{\begin{array}{**lr**} \bar{x}_2 \\ (\alpha x^{\rho}+\beta x^{\rho}_2)^{\frac{1}{\rho}}=y_0\end{array}   \right.$$
+$$\left\{\begin{array}{**lr**} \bar{x}_2 \\ (\alpha x^{\rho}+\beta x^{\rho}_2)^{\frac{1}{\rho}}=y_0\end{array}   \right.$$
 	$x_1=\frac{(x_1^{\rho}-\beta \bar{x}^{\rho}_2)^{\frac{1}{\rho}}}{\alpha}$
 	$c=w_1\frac{(x_1^{\rho}-\beta \bar{x}^{\rho}_2)^{\frac{1}{\rho}}}{\alpha}+w_2\bar{x}_2$
 
@@ -1213,13 +1202,13 @@ CES technology $f(x_1,x_2)=(x^{\rho}_1+x^{\rho}_2)^{\frac{1}{\rho}}$
 	$e(\mathbf{p},u)=[\sum\limits^n_{i=1}p^r_i]^{\frac{1}{r}}u$ expenditure function
 	Proof is on the link
 	[CES Utility: Solving for Compensated and Ordinary Demand Functions](https://www.youtube.com/watch?v=Z5vdkBs8oyA)
-	$$\begin{aligned}
-	\text{U}&=(x^{1/2}+y^{1/2})^2\quad\mathrm{~M=~}P_xx+P_yy  \\
-	&\mathsf{MU}_{x}=\frac{\partial U}{\partial x}=2(x^{1/2}+y^{1/2})\frac{1}{2}x^{-1/2}=(x^{1/2}+y^{1/2})x^{-1/2}  \\
-	&{\mathsf{MU}}_{y}={\frac{\partial U}{\partial y}}=2(x^{1/2}+y^{1/2}){\frac{1}{2}}y^{-1/2}=(x^{1/2}+y^{1/2})y^{-1/2} \\
-	&\frac{MU_{x}}{P_{x}}=\frac{MU_{y}}{P_{y}}   \\
-	&\frac{(x^{1/2}+y^{1/2})x^{-1/2}}{P_{\chi}}= \frac{(x^{1/2}+y^{1/2})y^{-1/2}}{P_{y}} 
-	\end{aligned}$$
+$$\begin{aligned}
+\text{U}&=(x^{1/2}+y^{1/2})^2\quad\mathrm{~M=~}P_xx+P_yy  \\
+&\mathsf{MU}_{x}=\frac{\partial U}{\partial x}=2(x^{1/2}+y^{1/2})\frac{1}{2}x^{-1/2}=(x^{1/2}+y^{1/2})x^{-1/2}  \\
+&{\mathsf{MU}}_{y}={\frac{\partial U}{\partial y}}=2(x^{1/2}+y^{1/2}){\frac{1}{2}}y^{-1/2}=(x^{1/2}+y^{1/2})y^{-1/2} \\
+&\frac{MU_{x}}{P_{x}}=\frac{MU_{y}}{P_{y}}   \\
+&\frac{(x^{1/2}+y^{1/2})x^{-1/2}}{P_{\chi}}= \frac{(x^{1/2}+y^{1/2})y^{-1/2}}{P_{y}} 
+\end{aligned}$$
 	$\frac{x^{\frac{-1}{2}}}{P_x}=\frac{y^{\frac{-1}{2}}}{P_y}$
 	$\frac{1}{P_x x^{\frac{1}{2}}}=\frac{1}{P_y y^{\frac{1}{2}}}$
 	$y^{1/2}=x^{1/2}\frac{P_{x}}{P_{y}}\left(\mathrm{square~both~sides}\right)$
@@ -1470,11 +1459,11 @@ $\begin{aligned}\mathsf{Proof}{:}\\&u^*\equiv\nu(\boldsymbol{p},\boldsymbol{e}(\
 </div></div>
 
 	Write the indirect utility function as $v(\mathbf{p}) = v(\mathbf{q}/m)$ and differentiate with respect to $q_i$ and $m$:
-	$$\begin{align}
-	&\frac{\partial v}{\partial q_i}=\frac{\partial v}{\partial p_i}\frac{1}{m}\\
-	&\frac{\partial v}{\partial m}=-\sum^k_{i=1} \frac{\partial v}{\partial p_i}\frac{q_i}{m^2}=-\sum^k_{i=1} \frac{\partial v}{\partial p_i}p_i \frac{1}{m}
-	\end{align}$$
-	$$x_i(\mathbf{p})=-\frac{\frac{\partial v}{\partial q_i}}{\frac{\partial v}{\partial m}}=\frac{\frac{\partial v(\mathbf{p})}{\partial p_i}}{\sum^k_{j=1}\frac{\partial v(\mathbf{p})}{\partial p_j}p_j}$$
+$$\begin{align}
+&\frac{\partial v}{\partial q_i}=\frac{\partial v}{\partial p_i}\frac{1}{m}\\
+&\frac{\partial v}{\partial m}=-\sum^k_{i=1} \frac{\partial v}{\partial p_i}\frac{q_i}{m^2}=-\sum^k_{i=1} \frac{\partial v}{\partial p_i}p_i \frac{1}{m}
+\end{align}$$
+$$x_i(\mathbf{p})=-\frac{\frac{\partial v}{\partial q_i}}{\frac{\partial v}{\partial m}}=\frac{\frac{\partial v(\mathbf{p})}{\partial p_i}}{\sum^k_{j=1}\frac{\partial v(\mathbf{p})}{\partial p_j}p_j}$$
 
 9.9. A consumer has a utility function $u(x, y, z) = \min\{x, y\} +z$. The prices of the three goods are given by $(p_x, p_y, p,)$ and the money the consumer has to spend is given by $m$.
 (a) It turns out that this utility function can be written in the form $U(V(x, y), z)$. What is the function $V(x, y)$? What is the function $U(V, z)$? 
@@ -1488,7 +1477,7 @@ $\begin{aligned}\mathsf{Proof}{:}\\&u^*\equiv\nu(\boldsymbol{p},\boldsymbol{e}(\
 (c) What is the indirect utility function?
 	Solution:
 	The indirect utility function is
-	$$v(p_x,p_y,p_z,m)=\max\{\frac{m}{p_x+p_y},\frac{m}{p_z}\}$$
+$$v(p_x,p_y,p_z,m)=\max\{\frac{m}{p_x+p_y},\frac{m}{p_z}\}$$
 	11.14 Geng Hao $z$相对$xy$是substitution, $x,y$ is complementary
 	
 
@@ -1498,18 +1487,18 @@ $\begin{aligned}\mathsf{Proof}{:}\\&u^*\equiv\nu(\boldsymbol{p},\boldsymbol{e}(\
 	==这个还是不是很清楚==
 	11.14首先a negative of concave function is a convex function, this will not change if we add a constant
 	A utility function is quasilinear in commodity 1 if it is in the form
-	$$u(x_1,\dots,x_L)=x_1+\theta(x_2,\dots,x_l)$$
+$$u(x_1,\dots,x_L)=x_1+\theta(x_2,\dots,x_l)$$
 	where $\theta$ is an arbitrary function In the case of two goods this function could be, for example, $u(x,y)=x+\sqrt{y}$
 	In this case, we have
-	$$\begin{align}
-	U(x,y)=V(x)+y\\
-	P_x x+P_y y=m
-	\end{align}$$
-	$$y=\frac{m-P_xx}{P_y}$$
+$$\begin{align}
+U(x,y)=V(x)+y\\
+P_x x+P_y y=m
+\end{align}$$
+$$y=\frac{m-P_xx}{P_y}$$
 	FOC
-	$$\begin{align}V'(x)=\frac{P_x}{P_y}\\
-	x=V^{-1}(\frac{P_x}{P_y})
-	\end{align}$$
+$$\begin{align}V'(x)=\frac{P_x}{P_y}\\
+x=V^{-1}(\frac{P_x}{P_y})
+\end{align}$$
 	Utility function $u=V\Big(V^{-1}(\frac{P_x}{P_y})\Big)+\frac{m-P_x\cdot V^{-1}(\frac{P_x}{P_y})}{P_y}$
 	$V\Big(V^{-1}(\frac{P_x}{P_y})\Big)$ and $\frac{-P_x\cdot V^{-1}(\frac{P_x}{P_y})}{P_y}$ can be seen as a function of prices
 	$\therefore$ indirect utility function $v(p)+m=u$
@@ -1530,44 +1519,89 @@ $<div class="markdown-embed-title">
 Let $y_i(p)$ be the firm's net supply function for good $i$. Then
 $y_i(p)=\frac{\partial \pi(\mathbf{p})}{\partial p_i}\text{ for }i=1,\dots,n$
 	[Proof](https://www.youtube.com/watch?v=V6Rziu74uhA): 
-	$\begin{align}
-	\max \pi(y,x_1,x_2)=py-w_1x_1-w_2x_2\\
-	s.t.\ f(x_1,x_2)\geq q\\
-	\text{Define }G(q,x_1,x_2)=q-f(x_1,x_2)\leq 0\\
-	G\text{ has no parameter such as }p,w_1,w_2\\
-	V(p,w_1,w_2)\text{ is profit}\\
-	\frac{\partial V}{\partial p}=\frac{\partial \pi}{\partial p}-\lambda \frac{\partial G}{\partial p}=y-\lambda(0)=\hat{y}(p,w_1,w_2)\\
-	\frac{\partial V}{\partial w_i}=\frac{\partial \pi}{\partial w_i}-\lambda\frac{\partial G}{\partial w_i}=-\hat{x}_i(p,w_1,w_2)\quad (\text{Factor Demand Function})
-	\end{align}$ 
+$\begin{align}
+\max \pi(y,x_1,x_2)=py-w_1x_1-w_2x_2\\
+s.t.\ f(x_1,x_2)\geq q\\
+\text{Define }G(q,x_1,x_2)=q-f(x_1,x_2)\leq 0\\
+G\text{ has no parameter such as }p,w_1,w_2\\
+V(p,w_1,w_2)\text{ is profit}\\
+\frac{\partial V}{\partial p}=\frac{\partial \pi}{\partial p}-\lambda \frac{\partial G}{\partial p}=y-\lambda(0)=\hat{y}(p,w_1,w_2)\\
+\frac{\partial V}{\partial w_i}=\frac{\partial \pi}{\partial w_i}-\lambda\frac{\partial G}{\partial w_i}=-\hat{x}_i(p,w_1,w_2)\quad (\text{Factor Demand Function})
+\end{align}$ 
+#### Exercise
+When the price of an output increases by a small amount there will be two effects. 
+First, there is a direct effect: because of the price increase the firm will make more profits, even if it continues to produce the same level of output. 
+But secondly, there will be an indirect effect: the increase in the output price will induce the firm to change its level of output by a small amount. However, the change in profits resulting from any infinitesimal change in output must be zero since we are already at the profit-maximizing production plan. Hence, the impact of the indirect effect is zero, and we are left only with the direct effect.
+
+3.1 . A competitive profit-maximizing firm has a profit function $\pi=(w_1,w_2)=\phi(w_1)+\phi(w_2)$. The price of output is normalized to be 1.
+	1. What do we know about the first and second derivatives of the functions $\phi(w_i)$?
+		Solution:
+		Since the profit function is convex and a decreasing function of the factor prices, we know that $\phi_i'(w_i)\leq 0$ and $\phi_i''(w_i)\geq 0$
+	2. If $x_i(w_1, w_2)$ is the factor demand function for factor $i$, what is the sign of $\partial x_i/\partial w_j$?
+		Solution:
+		It is zero. ==这个也没太懂== 
+	3. Let $f (x_1, x_2)$ be the production function that generated the profit function of this form. What can we say about the form of this production function? (Hint: look at the first-order conditions.)
+		Solution:
+		The demand for factor $i$ is only a function of the $i^{th}$  price. Therefore the marginal product of factor $i$ can only depend on the amount of factor $i$. It follows that $f(x_1, x_2) = g_1(x_1) + g_2(x_2)$.
+
+3.2. Consider the technology described by $y = 0$ for $x\leq 1$ and $y = \ln x$ for $x > 1$. Calculate the profit function for this technology.
+	Solution:
+	The firm can always choose $x=0$ and make zero profits
+	When $y=\ln x$
+	$\pi=p\ln x-wx$
+	The first order condition are $\frac{p}{x}=w$, which gives us the demand function $x=\frac{p}{w}$ and the supply function $y=\ln (\frac{p}{w})$. The profits from operating at this pint are $p\ln (\frac{p}{w})-p$.
+	In summary, $\pi(p,w)=\max \{p\ln(\frac{p}{w}-p,0)\}$
+
+3.3 Given the production function $f (x_1, x_2) = a_1 \ln x_1 + a_2 \ln x_2$, calculate the profit-maximizing demand and supply functions, and the profit function, For simplicity assume an interior solution. Assume that $a_i> 0$. 
+	Solution:
+	The first-order conditions are
+$\begin{align}
+a_1\frac{p}{x_1}-w_1=0\\
+a_2\frac{p}{x_2}-w_2=0
+\end{align}$
+	which can easily be solved for the factor demand functions. Substituting into the objective function gives us the profit function 
+
+3.5. Given the production function $f (x_1, x_2) = \min\{x_1, x_2\}^a$, calculate the profit-maximizing demand and supply functions, and the profit function. What restriction must a satisfy?
+	Solution:
+	If $w_i$ is strictly positive, the firm will never use more of factor $i$ than it needs to, which implies $x_1 = x_2$. Hence the profit maximization problem can be written as 
+$\max\ px^a_1-w_1x_1-w_2x_2$
+	The first-order condition is
+$pax^{a-1}_1-(w_1+w_2)=0$
+	Demand function: $x_1=(\frac{w_1+w_2}{pa})^{\frac{1}{a-1}}$
+	Supply function: $y=p(\frac{w_1+w_2}{pa})^{\frac{a}{a-1}}=p^{\frac{1}{1-a}}(\frac{w_1+w_2}{a})^{\frac{a}{a-1}}$
+	In order for a maximum to exist, $a<1$ ==最后一个怎么证明的没搞懂==
+		用second order condition证明是$0<a<1$ [[Microeconomics#Difficulties\|Difficulties]]
+		10.19问JZH：$a$默认大于0,不需要深究
+
 
 </div></div>
  we know that $\frac{\partial \pi(p,\mathbf{w})}{\partial p}=y(p)$; therefore,
-	$$\int^{p_1}_{p_0}y(p)dp=\pi(p_1,\mathbf{w})-\pi(p_0,\mathbf{w})$$
+$$\int^{p_1}_{p_0}y(p)dp=\pi(p_1,\mathbf{w})-\pi(p_0,\mathbf{w})$$
 
 13.3. An industry consists of a large number of firms, each of which has a cost function of the form 
 $$c(w_1,w_2,y)=(y^2+1)w_1+(y^2+2)w_2$$
 (a) Find the average cost curve of a firm and describe how it shifts as the factor price $w_1/w_2$ changes. 
 	Solution:
 	The average cost curve is just
-	$$\frac{c(\mathbf{w},y)}{y}=\frac{y^2+1}{y}w_1+\frac{y^2+2}{y}w_2$$
+$$\frac{c(\mathbf{w},y)}{y}=\frac{y^2+1}{y}w_1+\frac{y^2+2}{y}w_2$$
 	You should verify that it is a convex function that has a unique minimum at
-	$$y_m=\sqrt{\frac{w_1/w_2+2}{w_1/w_2+1}}$$
+$$y_m=\sqrt{\frac{w_1/w_2+2}{w_1/w_2+1}}$$
 	(Derivative equals 0, already calculated)
 	The derivative of $y_m$ with respect to $w_1/w_2$ is negative, so the minimum of the average cost shifts to the left (right) as $w_1/w_2$ increases (decreases). In fact it converges to 1 as the ratio approaches $∞$ and to $\sqrt{2}$ as it goes down to $0$.
 (b) Find the short-run supply curve of an individual firm. 
 	Solution:
 	The marginal cost is
-	$$\frac{\partial c(\mathbf{w},y)}{\partial y}=2y(w_1+w_2)$$
+$$\frac{\partial c(\mathbf{w},y)}{\partial y}=2y(w_1+w_2)$$
 	so short-run supply schedule is given by
-	$$y(p)=\frac{p}{2(w_1+w_2)}$$
+$$y(p)=\frac{p}{2(w_1+w_2)}$$
 (c) Find the long-run industry supply curve.
 	Solution: ==有点没懂== 搞懂了
-	$$Y(p)=\left\{\begin{array}{**lr**} \text{arbitrarily large amount}\quad \text{if }p>2y_m(w_1+w_2) \\ 0\quad \text{otherwise} \end{array}   \right.$$
+$$Y(p)=\left\{\begin{array}{**lr**} \text{arbitrarily large amount}\quad \text{if }p>2y_m(w_1+w_2) \\ 0\quad \text{otherwise} \end{array}   \right.$$
 	When price is higher that optimal producing equalibrim in the short term, companies will enter
 (d) Describe an input requirement set for an individual firm
 	Solution:==有点没懂==
 	From the cost function we have that $x_1 = y^2 + 1$ and $x_2 = y^2 + 2$. Also, we see that $x_1$ and $x_2$ are not substitutes at any degree. Therefore, the input requirement set for an individual firm is
-	$$V(y)=\{(x_1,x_2)\in[1,\infty)\times[2,\infty):y\leq \min\{\sqrt{x_1-1},\sqrt{x_2-2}\}\}$$
+$$V(y)=\{(x_1,x_2)\in[1,\infty)\times[2,\infty):y\leq \min\{\sqrt{x_1-1},\sqrt{x_2-2}\}\}$$
 	2023/11/14 这道题其实和这个模型有关
 	![Pasted image 20231114093220](https://raw.githubusercontent.com/meteor0823/BlogImage/main/202312042353605.png)
 
@@ -1588,7 +1622,7 @@ $$c(w_1,w_2,y)=(y^2+1)w_1+(y^2+2)w_2$$
 (d) What is the equilibrium rent on the land?
 	Solution:
 	The equilibrium rent on land r must equal the difference between each firm revenues and labor costs at the competitive equilibrium. Therefore,
-	$$r=p-c(y)=2-1^2=2-1=1$$
+$$r=p-c(y)=2-1^2=2-1=1$$
 
 13.5. Consider a model where the U.S. and England engage in trade in umbrellas. The representative firm in England produces the export model umbrella according to a production function $f (K, L)$ where $K$ and $L$ are the amounts of capital and labor used in production. Let $r$ and $w$ be the price of capital and the price of labor respectively in England, and let $c(w, r, y)$ be the cost function associated with the production function $f (K, L)$. Suppose that initially the equilibrium price of umbrellas is $p^*$ and the equilibrium output is $y^*$. Assume for simplicity that all of the export model umbrellas are exported, that there is no production of umbrellas in the US., and that all markets are competitive.
 (a) England decides to subsidize the production and export of umbrellas by imposing an export subsidy s on each umbrella, so that each umbrella exported earns the exporter $p + s$. What size import tax $t(s)$ should the U.S. choose so as to offset the imposition of this subsidy; i.e., to keep the production and export of umbrellas constant at $y^*$? (Hint: This is the easy part; don't get too subtle.) 
@@ -1635,7 +1669,7 @@ $$D(p)=1000-50p$$
 (c) Now the domestic industry lobbies for protection and Congress agrees to put a $3 tariff on foreign umbrellas. What is the new U.S. price for umbrellas paid by the consumers? 
 	Solution:
 	Let $p$ be the price paid by consumers. Then the domestic firms receive a price of p and the foreign firms receive a price of $p − 3$. Demand equals supply gives us
-	$$90-p=p+[p-3]$$
+$$90-p=p+[p-3]$$
 	Solving we have $p^*=31$
 (d) How many umbrellas are supplied by foreign firms and how many are supplied by domestic firms?
 	Solution:
@@ -1864,7 +1898,7 @@ If all of the individual demand functions are continuous, then z will be a conti
 
 **Walras' Law** For any price vector $\mathbf{p}$, we have $\mathbf{pz(p)}\equiv 0$; i.e., the value of the excess demand is identically zero.
 	Proof. We simply write the definition of aggregate excess demand and multiply by $\mathbf{p}$:
-	$$\mathbf{pz}(\mathbf{p})=\mathbf{p}\Big[\sum^n_{i=1}\mathbf{x}_i(\mathbf{p},\mathbf{p}w_i)-\sum^n_{i=1}w_i\Big]=\sum^n_{i=1}[\mathbf{px}_i(\mathbf{p},\mathbf{p}w_i)-\mathbf{p}w_i]=0$$
+$$\mathbf{pz}(\mathbf{p})=\mathbf{p}\Big[\sum^n_{i=1}\mathbf{x}_i(\mathbf{p},\mathbf{p}w_i)-\sum^n_{i=1}w_i\Big]=\sum^n_{i=1}[\mathbf{px}_i(\mathbf{p},\mathbf{p}w_i)-\mathbf{p}w_i]=0$$
 	since $\mathbf{x}_i(\mathbf{p}, \mathbf{p}w_i)$ must satisfy the budget constraint $\mathbf{px}_i = \mathbf{p}w_i$ for each agent $i= 1, ..., n$
 
 Walras' law says something quite obvious: if each individual satisfies his budget constraint, so that the value of his excess demand is zero, then the value of the sum of the excess demands must be zero
@@ -2081,7 +2115,7 @@ By contrast, the identity of a newspaper’s owner explains far less of the vari
 	2. First, for each politician, we compute a vector that gives the number of times each phrase appeared in their speeches. Second, we compute a mapping from the vector of counts to a measure of a politician’s ideology. Finally, we generate counts of each phrase in a newspaper’s text and apply the same mapping to generate an index of the newspaper’s ideology.
 	3. We therefore add a “feature selection” step in which we use simple computations to identify a set of phrases that are highly diagnostic of the speaker’s political party.(这个的理解似乎也不深刻)
 	4. Let $χ^2_{pl}$ denote Pearson’s $χ^2$ statistic for each phrase: ==为什么这么构造也值得思考==
-		$$x^2_{pl}=\frac{(f_{plr}f_{\sim pld}-f_{pld}f_{\sim plr})^2}{(f_{plr}+f_{pld})(f_{plr+f_{\sim plr}})(f_{pld}+f_{\sim pld})(f_{\sim plr+f_{\sim pld}})}$$
+		$x^2_{pl}=\frac{(f_{plr}f_{\sim pld}-f_{pld}f_{\sim plr})^2}{(f_{plr}+f_{pld})(f_{plr+f_{\sim plr}})(f_{pld}+f_{\sim pld})(f_{\sim plr+f_{\sim pld}})}$
 	5. $χ^2$ is a test statistic for the null hypothesis that the propensity to use phrase p of length l is equal for Democrats and Republicans.
 4. An Economic Model of Slant
 	1. Our model is designed to capture three important features of newspaper markets. 
@@ -2261,7 +2295,7 @@ No smartphone
 2. (24 points) Solve the following problems on preference and demand.
 	a. In a two-commodity world, for a set of indifference curves representing the same underlying preference, prove that (i) an indifference curve cannot be “thick,” and (ii) any two indifference curves cannot intersect each other.  
 	b. Consider the indirect utility function given by
-	$$v(p_1,p_2,m)=\frac{m}{p_1+p_2}$$
+$$v(p_1,p_2,m)=\frac{m}{p_1+p_2}$$
 	Find the associated demand functions, expenditure function, and direct utility function.
 	Solution from AI:
 		a. 
@@ -2279,21 +2313,21 @@ No smartphone
 		10.20 DYC:一眼看出是leontief function
 
 3. (28 points) In a two-commodity world, consider a representative consumer with the following Cobb-Douglas utility:
-	$$U(x_1,x_2)=x^{\alpha}_1x^{\beta}_2$$
+$$U(x_1,x_2)=x^{\alpha}_1x^{\beta}_2$$
 	and the commodity prices and income are denoted by $p_1,p_2$ and $m$, respectively. Suppose that $x_1$ is food and $x_2$ is a composite good (“everyting else”).
 	a. Find the demand functions, $x^*_1(p_1,p_2,m)$ and $x^*_2(p_1,p_2,m)$. Show your work step by step.
 		Solution:
-		$$\left\{\begin{array}{**lr**} U=x^{\alpha}_1x^{\beta}_2\quad x_1\text{ is food }x_2\text{ is others }\\ p_1x_1+p_2x_2=m\end{array}   \right.$$
+$$\left\{\begin{array}{**lr**} U=x^{\alpha}_1x^{\beta}_2\quad x_1\text{ is food }x_2\text{ is others }\\ p_1x_1+p_2x_2=m\end{array}   \right.$$
 		$x_1=\frac{\alpha}{\alpha+\beta}\cdot\frac{m}{p_1}$
 		$x_2=\frac{\alpha}{\alpha+\beta}\cdot \frac{m}{p_2}$
 	b. Now, the consumer receives a food voucher of the amount _B_. We use  $x^{total}_1$ and $x^{oop}_1$ to denote total and out-of-pocket food consumption levels, respectively. Write out the consumer’s budget constraint in this case.
 		Solution:
 		Food Voucher B, $x^{total}_1>x^{oop}_1$
-		$$\left\{\begin{array}{**lr**} x^{oop}_1 \geq 0\\ x_2 \geq 0\\ p_1x^{total}_1+p_2x_2=m\\ x^{total}_1 \geq \frac{B}{p_1}   \end{array}   \right.$$
+$$\left\{\begin{array}{**lr**} x^{oop}_1 \geq 0\\ x_2 \geq 0\\ p_1x^{total}_1+p_2x_2=m\\ x^{total}_1 \geq \frac{B}{p_1}   \end{array}   \right.$$
 	c. Solve for the optimal consumption bundles in this scenario with a food voucher. Show that with the food voucher, (i) total food consumption increases, and (ii) out-of-pocket food expenditure decreases compared to the consumer’s original choices.
 		Solution:
-		$$\begin{align}&\max x^{total(\alpha)}_1x^{\beta}_2\\ \text{s.t.}&\left\{\begin{array}{**lr**} p_1x_1^{total}+p_2x_2=m+B\\ p_1x^{total}_1 \ge B   \end{array}   \right.\end{align}$$
-		$$x^{total}_1=\left\{\begin{array}{**lr**} \frac{\alpha}{\alpha+\beta}\frac{m+B}{p_1}, \\ \frac{B}{p_1}\quad x^{oop}_1=0\end{array}   \right.$$
+$$\begin{align}&\max x^{total(\alpha)}_1x^{\beta}_2\\ \text{s.t.}&\left\{\begin{array}{**lr**} p_1x_1^{total}+p_2x_2=m+B\\ p_1x^{total}_1 \ge B   \end{array}   \right.\end{align}$$
+$$x^{total}_1=\left\{\begin{array}{**lr**} \frac{\alpha}{\alpha+\beta}\frac{m+B}{p_1}, \\ \frac{B}{p_1}\quad x^{oop}_1=0\end{array}   \right.$$
 		We can get this answer  by review this [Proof: Demand Functions for Cobb-Douglas Utility Functions](https://www.econgraphs.org/textbooks/intermediate_micro/consumer_theory/demand/cobb_douglas.html)
 	d. Related to the paper by Hoynes and Schanzenbach (2009), “_Consumption Responses to In-Kind Transfers: Evidence from the Introduction of the Food Stamp Program_” (which we read in class), state one research question the authors try to answer. Briefly describe the estimation strategy used to empirically examine that question. State one assumption necessary for a causal interpretation of its main estimation results.
 		ChatPDF's answer:
@@ -2321,13 +2355,13 @@ No smartphone
 
 
 4. (8 points) In Finkelstein (2004), “_Static and Dynamic Effects of Health Policy: Evidence from the Vaccine Industry_,” the author conducts welfare analysis using the following expression for total social benefits associated with vaccination:
-	$$V*E*H$$
+$$V*E*H$$
 	where $V$ is the vaccination rate, _E_ is the maximal efficacy of a vaccine, and _H_ is the monetary value of the social benefits of complete vaccination with a perfectly effective vaccine. 
 	Explain the channels through which vaccine innovation can bring additional social health benefits in the long run.
 
 5. (20 points) Solve the following problems on production and cost. 
 	a. Given the cost function:
-	$$c(w_1,w_2)=w_1w_2y/(w_1+w_2)$$
+$$c(w_1,w_2)=w_1w_2y/(w_1+w_2)$$
 	where $w_1, w_2$  denote input prices.
 	Find the conditional input demand functions, $x^{\#}_1(w_1,w_2,y)$ and $x^{\#}_2(w_1,w_2,y)$, and use them to recover the underlying production function $y=f(x_1,x_2)$  _._ What is the form of this technology?
 	Solution:
@@ -2343,15 +2377,15 @@ No smartphone
 		$y=(x_1^{\frac{1}{2}}+x_2^{\frac{1}{2}})^2$
 		It is the CES technology 
 	b. Consider the production function:
-	$$f(x_1,x_2,x_3,x_4)=\min\{2x_1+x_2,x_3+2x_4\}$$
+$$f(x_1,x_2,x_3,x_4)=\min\{2x_1+x_2,x_3+2x_4\}$$
 	Find the conditional input demand function for each factor and the cost function for this technology.
 	AI's solution
 	The production function is given by:
-	$$f(x_1​,x_2​,x_3​,x_4​)= \min\{2x_1​+x_2​,x_3+2x_4\}$$
+$$f(x_1​,x_2​,x_3​,x_4​)= \min\{2x_1​+x_2​,x_3+2x_4\}$$
 	To find the conditional input demand function for each factor, we need to find the input that minimizes the cost of producing a given output. The cost function for this technology can then be derived from the input demand functions.
 	The production function can be rewritten as:
 
-		$$f(x_1,x_2,x_3,x_4)=\left\{\begin{array}{**lr**} 2x_1+x_2\quad \text{if }2x_1+x_2\leq x_3+2x_4 \\ x_3+2x_4\quad \text{if }2x_1+x_2>x_3+2x_4\end{array}   \right.$$
+$$f(x_1,x_2,x_3,x_4)=\left\{\begin{array}{**lr**} 2x_1+x_2\quad \text{if }2x_1+x_2\leq x_3+2x_4 \\ x_3+2x_4\quad \text{if }2x_1+x_2>x_3+2x_4\end{array}   \right.$$
 		We can see that $x_1$​ and $x_2$​ are perfect substitutes, and $x_3$​ and $x_4$​ are also perfect substitutes. Therefore, if $w_i$​ denotes the price per unit of input $x_i$​, then:
 		- $x_1$​ is used to produce the output when $\frac{w_1}{2}​​<w_2$​ and $x_2​=0$
 		- $x_2$​ is used to produce the output when $\frac{w_1}{2}​​>w_2$​​ and $x_1​=0$
@@ -2360,7 +2394,7 @@ No smartphone
 		So if we want to produce one unit of output when the input prices satisfy $\frac{w_1}{2}<w_2$​ and $w_3<\frac{w_4}{2}$​​, then we must employ $x_1=\frac{1}{2}$ and $x_3=1$ so as to minimize cost, and the cost is given by ​​$\frac{w_1}{2}+w_3$​.
 		When the input prices satisfy $\frac{w_1}{2}>w_2$ and $w_3<\frac{w_4}{2}$​​, then we must employ $x_2​=1 and $x_3​=1$ in order to minimize cost, and the cost is given by $w_2+w_3$​.
 		For other two combinations, we can write the cost of producing one unit of output as $\min(\frac{w_1}{2},w_2)+\min(w_3,\frac{w_4}{2})$. More generally, if we want to produce q units, cost function is
-		$$C(w_1,w_2,w_3,w_4,q)=[\min(\frac{w_1}{2},w_2)+\min(w_3,\frac{w_4}{2})]q$$
+$$C(w_1,w_2,w_3,w_4,q)=[\min(\frac{w_1}{2},w_2)+\min(w_3,\frac{w_4}{2})]q$$
 		10/20 感觉和[[Microeconomics#Problem Set 2\|textbook上5.11]]有点像 { #Midterm5}
 
 
@@ -2394,7 +2428,7 @@ and the commodity prices and income are denoted by $p_1,p_2$ and $m$, respective
 	b. For a continuous and twice differentiable cost function, $c(y)$, marginal cost cost always equals average cost at the point of minimum average cast.
 		Solution:
 		$MC=\frac{\partial c(y)}{\partial y}\quad AC=\frac{c(y)}{y}$
-		$$\min\limits_y\ \frac{c(y)}{y}$$
+$$\min\limits_y\ \frac{c(y)}{y}$$
 		$\frac{d\ AC}{dy}=\frac{y\cdot c'(y)-c(y)}{y^2}=0$
 		$\therefore c'(y^*)y^*=c(y^*)\Rightarrow c'(y^*)=\frac{c(y^*)}{y^*}$ 
 		$\therefore MC=AC$
@@ -2407,27 +2441,27 @@ and the commodity price and income are denoted by $p_1,p_2$ and $m$, respectivel
 	c. Solve for the optimal consumption bundles in this scenario with a food vouvher. Show that with the food voucher, (i) total food consumption increases, and (ii) out-of-pocket food expenditure decreases compared to the consumer's original choices.
 	Solution:
 	(looks tutor write $x,y$ as $x_1,x_2$, $p_x,p_y$ as $P_1,P_2$)
-	$$\begin{align}
-	u=(w_x x^{\rho}+w_y y^{\rho})^{\frac{1}{\rho}}, P_x x+P_y y\leq M\\
-	\frac{MU_x}{MU_y}=(\frac{w_x}{w_y})(\frac{y}{x})^{1-\rho}=\frac{P_x}{P_y}\Rightarrow y^*=(\frac{P_x}{P_y})^{\frac{1}{1-\rho}}(\frac{w_y}{w_x})^{\frac{1}{1-\rho}}
-	\end{align}$$
+$$\begin{align}
+u=(w_x x^{\rho}+w_y y^{\rho})^{\frac{1}{\rho}}, P_x x+P_y y\leq M\\
+\frac{MU_x}{MU_y}=(\frac{w_x}{w_y})(\frac{y}{x})^{1-\rho}=\frac{P_x}{P_y}\Rightarrow y^*=(\frac{P_x}{P_y})^{\frac{1}{1-\rho}}(\frac{w_y}{w_x})^{\frac{1}{1-\rho}}
+\end{align}$$
 	We write $\sigma=\frac{1}{1-\rho}$ ([[Microeconomics#Chapter 1\|Problem1-2-elasticity of substitution]]). $P_x x+P_y (\frac{P_x}{P_y})^{\sigma}(\frac{w_y}{w_x})^{\sigma}x=M \Rightarrow$
 	 $P_x x^*+P_y (\frac{P_x}{P_y})^{\sigma}(\frac{w_y}{w_x})^{\sigma}x^*=M \Rightarrow P^{1-\sigma}_x x^*+P^{1-\sigma}_y (\frac{w_y}{w_x})^{\sigma}x^*=MP^{-\sigma}_x$
 	$x^*=\frac{MP^{-\sigma_x}}{(P^{1-\sigma}_x+P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma})}\mathop{\Rightarrow}\limits^{expenditure} P_x x^*=\frac{P^{1-\sigma}_x}{(P^{1-\sigma}_x+P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma})}M$
 	With voucher B,
-	$$x^{\text{Total}}=\left\{\begin{array}{**lr**} \frac{(M+B)P^{-\sigma_x}}{(P^{1-\sigma}_x+P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma})}\text{ if }\frac{(M+B)P^{-\sigma_x}}{(P^{1-\sigma}_x+P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma})}>\frac{B}{P_x}\\ x^{\text{total}}=\frac{B}{P_x}, \text{otherwise} \end{array}   \right.$$
-	$$P_x x^{\text{OOP}}=\left\{\begin{array}{**lr**} \frac{(M+B)P^{-\sigma_x}}{(P^{1-\sigma}_x+P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma})}-B=\frac{P^{1-\sigma}_xM-P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma}B}{(P^{1-\sigma}_x+P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma})}<P_x x^{\text{OLD}},\text{in case 1}\\ 0<P_x x^{\text{OLD}},\text{otherwise} \end{array}   \right.$$
+$$x^{\text{Total}}=\left\{\begin{array}{**lr**} \frac{(M+B)P^{-\sigma_x}}{(P^{1-\sigma}_x+P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma})}\text{ if }\frac{(M+B)P^{-\sigma_x}}{(P^{1-\sigma}_x+P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma})}>\frac{B}{P_x}\\ x^{\text{total}}=\frac{B}{P_x}, \text{otherwise} \end{array}   \right.$$
+$$P_x x^{\text{OOP}}=\left\{\begin{array}{**lr**} \frac{(M+B)P^{-\sigma_x}}{(P^{1-\sigma}_x+P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma})}-B=\frac{P^{1-\sigma}_xM-P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma}B}{(P^{1-\sigma}_x+P^{1-\sigma}_y(\frac{w_y}{w_x})^{\sigma})}<P_x x^{\text{OLD}},\text{in case 1}\\ 0<P_x x^{\text{OLD}},\text{otherwise} \end{array}   \right.$$
 	d. Related to the paper by Hoynes and Schanzenbach (2009), "_Consumption Responses to In-Kind Transfers: Evidence from the Introduction of the Food Stamp Program_" (which we read in class), explain why one might be concerned about the potential **endogeneity** of the roll-out of food stamp policies in U.S countries. Brief describe one empirical exercise that can be used to address such a concern.
 
 
 5. Solve the following problems on production and cost
 	a. Given the cost function:
-	$$c(w_1,w_2,y)=\frac{w_1w_2y}{(w_1+w_2)}$$
+$$c(w_1,w_2,y)=\frac{w_1w_2y}{(w_1+w_2)}$$
 	where $w_1,w_2$ denote input price.
 	Find the conditional input demand functions, $x^{\#}_1(w_1,w_2,y)$ and $x^{\#}_2(w_1,w_2,y)$, and use them to recover the underlying production $y=f(x_1,x_2)$. What is the form of this technology?
 		Solution: Smae as [[Microeconomics#Mid-term\|Midterm5]]
 	b. Consider the production function: 
-	$$f(x_1,x_2,x_3,x_4)=\min\{2x_1,x_2\}+\min\{x_3,3x_4\}$$
+$$f(x_1,x_2,x_3,x_4)=\min\{2x_1,x_2\}+\min\{x_3,3x_4\}$$
 	Find the conditional input ddemand function for each factor and the cost function for this technology
 	==Perhapes I need to see exercise 5.11 on textbook== [[Microeconomics#Problem Set 2\|5-11]] ==But I still do not know==
 
@@ -2446,11 +2480,11 @@ How to find the optimal uniform price and quantities?
 	Solution:
 	Dynamic Pricing
 	$p_i=a_i-bq_i\Rightarrow q_i=\alpha_i-\beta p_i$ where $\alpha_i=\frac{a_i}{b},\beta=\frac{1}{b}$
-	$$\max\ (p_1-c)q_1^{(p_1)}+(p_2-c)q_2^{(p_2)}$$
-	$$\begin{align}q_i=\alpha_i-\beta p_i\\ \frac{\partial \pi}{\partial p_1}=\alpha_1-\beta p_1-\beta p_1+\beta c=0\\ p_1=\frac{\alpha_1+\beta c}{2\beta} \end{align}$$
+$$\max\ (p_1-c)q_1^{(p_1)}+(p_2-c)q_2^{(p_2)}$$
+$$\begin{align}q_i=\alpha_i-\beta p_i\\ \frac{\partial \pi}{\partial p_1}=\alpha_1-\beta p_1-\beta p_1+\beta c=0\\ p_1=\frac{\alpha_1+\beta c}{2\beta} \end{align}$$
 	Uniform Pricing
-	$$\max\ (\overline{p}-c)q_1(\overline{p})+(\overline{p}-c)q_2(\overline{p})$$
-	$$\begin{align}q_1=\alpha_1-\beta \overline{p}\\q_2=\alpha_2-\beta \overline{p} \\ \frac{\partial \pi}{\partial \overline{p}}=\alpha_1-\beta \overline{p}-\beta \overline{p}+\beta c+\alpha_2-\beta \overline{p}-\beta \overline{p}+\beta c=0\\ \overline{p}=\frac{\alpha_1+\alpha_2+2\beta c}{4\beta} \end{align}$$
+$$\max\ (\overline{p}-c)q_1(\overline{p})+(\overline{p}-c)q_2(\overline{p})$$
+$$\begin{align}q_1=\alpha_1-\beta \overline{p}\\q_2=\alpha_2-\beta \overline{p} \\ \frac{\partial \pi}{\partial \overline{p}}=\alpha_1-\beta \overline{p}-\beta \overline{p}+\beta c+\alpha_2-\beta \overline{p}-\beta \overline{p}+\beta c=0\\ \overline{p}=\frac{\alpha_1+\alpha_2+2\beta c}{4\beta} \end{align}$$
 	If all the curves are linear, then $\overline{p}=\frac{p_1+p_2}{2}$
 	$q_1=\frac{3a_1-a_2-2c}{4b}$ and $q_2=\frac{3a_2-a_1-2c}{4b}$
 Which scheme yields higher social surplus?
@@ -2477,16 +2511,16 @@ Chapter 17 Problems: 17.4, 17.6, 17.8, 17.11*
 14.14* The monopolist can also be thought of as choosing the price and letting the market determine how much is sold. Write down the profit maximization problem and verify that $p[1 + 1/\varepsilon] = c'(y)$ at the optimal price.
 	Solution:
 	The monopolist's profit maximization problem with the demand function :
-	$$\max\limits_p\ pD(p)-C(D(p))$$
+$$\max\limits_p\ pD(p)-C(D(p))$$
 	Alternatively, with the inverse demand function $p(y)$:
-	$$\max_y\ p(y)y-C(y)$$
+$$\max_y\ p(y)y-C(y)$$
 	FOC and SOC (for an interior optimum):
-	$$\begin{align}
-	p+p'(y)y=C'(y)\\
-	2p'+p''y-C''(y)\leq 0
-	\end{align}$$
+$$\begin{align}
+p+p'(y)y=C'(y)\\
+2p'+p''y-C''(y)\leq 0
+\end{align}$$
 	It follows from the FOC:
-	$$p[1+\frac{1}{\varepsilon_p}]=C'(y)$$
+$$p[1+\frac{1}{\varepsilon_p}]=C'(y)$$
 	where $\varepsilon_p=\frac{dy}{dp}\cdot \frac{p}{y}$ i.e., elasticity of demand
 
 14.20*. A monopolist maximizes $p(x)x-c(x)$. In order to capture some of the monopoly profits, the government imposes a tax on revenue of an amount t so that the monopolist's objective function becomes $p(x)x - c(x) - tp(x)x$. Initially, the government keeps the revenue from this tax.
@@ -2590,7 +2624,7 @@ b) Show that the current allocation of cards is not economically efficient.
 	$MRS^R_{x,y}\neq MRS^D_{x,y}$ therefore this allocation is not economically efficient
 c) Identify a trade of cards between David and Ron that makes both better off.
 	Solution:
-	$$\left\{\begin{array}{**lr**} \frac{y^R}{x^R}=\frac{y^D}{2x^D}\\ x^R+x^D=1000\\ y^R+y^D=5000 \end{array}   \right.\Rightarrow \text{infinite allocations and exchange}$$
+$$\left\{\begin{array}{**lr**} \frac{y^R}{x^R}=\frac{y^D}{2x^D}\\ x^R+x^D=1000\\ y^R+y^D=5000 \end{array}   \right.\Rightarrow \text{infinite allocations and exchange}$$
 	One of the trades is David gives 10 pokemon cards to Ron, in exchange of one piece of baseball card from Ron. Therefore, both people will be better off.
 
 
@@ -2898,35 +2932,35 @@ where $Y=y_1+y_2$ is total output
 	Solution:
 	Definition of Cartels
 	If the firms were able to collude and act like a monopolist, they would jointly solve the following problem:
-	$$\max_{q_1,\cdots,q_n} \sum^n_{i=1} \pi_i=P(Q)Q-\sum^n_{i=1}C(q_i)$$
+$$\max_{q_1,\cdots,q_n} \sum^n_{i=1} \pi_i=P(Q)Q-\sum^n_{i=1}C(q_i)$$
 	In this case,
-	$$\max_{y_1,y_2}\ \pi_{tot}=P(y_1,y_2)(y_1+y_2)-c_1(y_1)-c_2(y_2)$$
+$$\max_{y_1,y_2}\ \pi_{tot}=P(y_1,y_2)(y_1+y_2)-c_1(y_1)-c_2(y_2)$$
 	FOC.
-	$$\begin{align}
-	P(y_1,y_2)+P'(y_1,y_2)(y_1+y_2)-c'(y_1)=0\\
-	P(y_1,y_2)+P'(y_1,y_2)(y_1+y_2)-c'(y_2)=0
-	\end{align}$$
+$$\begin{align}
+P(y_1,y_2)+P'(y_1,y_2)(y_1+y_2)-c'(y_1)=0\\
+P(y_1,y_2)+P'(y_1,y_2)(y_1+y_2)-c'(y_2)=0
+\end{align}$$
 	Solve for $y_1$
 	Given $P(Y)=100-Y=100-y_1-y_2,MC=0$
-	$$\begin{align}
-	(100-y_1-y_2)+(-1)(y_1+y_2)=0\\
-	100-y_1-y_2-y_1-y_2=0\\
-	y_1+y_2=50
-	\end{align}$$
+$$\begin{align}
+(100-y_1-y_2)+(-1)(y_1+y_2)=0\\
+100-y_1-y_2-y_1-y_2=0\\
+y_1+y_2=50
+\end{align}$$
 	Cartel Amount $y_1+y_2=50\Rightarrow Y=50$
 (e) If firm 1 behaves as a follower and firm 2 behaves as a leader, calculate the Stackelberg equilibrium output of each firm.
 	Solution:
 	Stakleberg equation output
 	Stage 2: follower's move/reaction given leader's choice $y^*_1$
-	$$\max_{q_2}\ \pi_2=P(Y)y_2-c(y_2)$$
+$$\max_{q_2}\ \pi_2=P(Y)y_2-c(y_2)$$
 	Same as question (b)
-	$$y_2=\frac{100-y_1}{2}$$
+$$y_2=\frac{100-y_1}{2}$$
 	Substitute $y_2$ into Leader's $\pi$ max problem (anticipating by backward induction)
-	$$\begin{align}\max_{y_1}\ \pi_1&=P(Y)y_1-c(y_1)\\
-	&=(100-Y)y_1-c(y_1)\\
-	&=(100-y_1-(\frac{100-y_1}{2}))y_1-c(y_1)\\
-	&=(\frac{100-y_1}{2})y_1-c(y_1)
-	\end{align}$$
+$$\begin{align}\max_{y_1}\ \pi_1&=P(Y)y_1-c(y_1)\\
+&=(100-Y)y_1-c(y_1)\\
+&=(100-y_1-(\frac{100-y_1}{2}))y_1-c(y_1)\\
+&=(\frac{100-y_1}{2})y_1-c(y_1)
+\end{align}$$
 	FOC on $y_1$
 	$50-y_1-c'(y_1)=0$
 	$\because c'(y)=MC=0$
