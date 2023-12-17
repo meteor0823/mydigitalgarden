@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/microeconomics/","dgPassFrontmatter":true}
+{"dg-publish":true,"link":"https://www.notion.so/Microeconomics-631f45ab79e341bf918ee69b925da687","notionID":"631f45ab-79e3-41bf-918e-e69b925da687","permalink":"/microeconomics/","dgPassFrontmatter":true}
 ---
 
 
