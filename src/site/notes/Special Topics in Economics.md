@@ -17,7 +17,6 @@ D:\All Document\Msc\Some Specific Topics in Economics
 
 The course grade is based on class participation (10%), a group presentation (20%), a group project (20%), and a final exam (50%). 
 
-[锚点跳跃测试](#jump)
 # Introduction: Why Does Finance Matter? 
 In an environment with no information or transaction costs, there is no need for a financial (Kenneth Arrow (1964)-Gerard Debreu (1959)) institution.
 
@@ -50,7 +49,7 @@ The Dark Side of Finance
 1. There are also theoretical studies show that, in an incomplete market economy, adding a market can possibly reduce social welfare (Hart, 1975; Elul,1995).
 2. Without proper rules, finance can easily degenerate into a rent-seeking activity (Zingales’ 2015 AFA Presidential Address).
 3. Many financial activities tend to have a private return that is much higher than the (perceived) social return.
-4. <span id="jump">Too much finance without proper regulations often lead to financial crises, and financial crises are very costly (e.g., Schularick and Taylor, 2012)</sapn>
+4. Too much finance without proper regulations often lead to financial crises, and financial crises are very costly (e.g., Schularick and Taylor, 2012)
 
 Evidence
 Supportive Evidence on Finance and Economic Growth:
